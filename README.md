@@ -21,7 +21,7 @@ Explore the live web application here:
 
 Sandeshagrawal.me is the professional portfolio website of Sandesh Agrawal. It features interactive sections highlighting professional client services, custom project galleries, native Android app architecture details, and custom Recharts charts representing skill sets.
 
-This project has been optimized for performance, clean typography, responsive layout structures, and visual excellence.
+This project features high-performance asset rendering, modern CSS layout systems, responsive mobile-first typography, and a premium developer design system.
 
 ---
 
@@ -32,7 +32,7 @@ This project has been optimized for performance, clean typography, responsive la
 - **Optimized** video headers and modern dark mode styling
 - **Vite-powered** bundler with Tailwind CSS custom configurations
 - **Mobile-First Responsive Design**: Extensively tested across various screen sizes to guarantee pixel-perfect rendering and touch responsiveness.
-- **Embedded Developer Credits**: Standardized portfolio credits linking directly to your personal portfolio site [sandeshagrawal.me](https://sandeshagrawal.me).
+- **Developer Portfolio Links**: Integrates clean, personal backlinks routing back to Sandesh Agrawal's primary portfolio at [sandeshagrawal.me](https://sandeshagrawal.me).
 
 ---
 
