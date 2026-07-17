@@ -85,7 +85,7 @@ const Hero: React.FC = () => {
               transition={{ delay: 0.25 }}
               className="font-body text-[10px] md:text-xs text-yellow-400 font-bold tracking-[0.2em] uppercase mb-8 text-left leading-relaxed max-w-2xl"
             >
-              BUILDING HIGH-PERFORMANCE DIGITAL EXPERIENCES. 25+ ELITE PROJECTS DELIVERED. 99+ LIGHTHOUSE SCORES.
+              BUILDING HIGH-PERFORMANCE DIGITAL EXPERIENCES. 10+ SaaS & AI PLATFORMS BUILT. 99+ LIGHTHOUSE SCORES.
             </motion.p>
 
             {/* Actions Buttons */}
@@ -124,13 +124,27 @@ const Hero: React.FC = () => {
             {[1, 2, 3].map((i) => (
               <div key={i} className="flex gap-4 md:gap-16 items-center">
                 {[
-                  'REACT.JS',
-                  'NODE.JS',
-                  'MONGODB',
+                  'REACT',
                   'NEXT.JS',
                   'TAILWIND CSS',
-                  'TECHNICAL SEO',
-                  'PERFORMANCE ARCHITECTURE',
+                  'VITE',
+                  'NODE.JS',
+                  'EXPRESS.JS',
+                  'GRAPHQL',
+                  'REST APIS',
+                  'PYTHON',
+                  'JAVA',
+                  'MONGODB',
+                  'POSTGRESQL',
+                  'SUPABASE',
+                  'AWS',
+                  'FIREBASE',
+                  'JAVASCRIPT',
+                  'TYPESCRIPT',
+                  'HTML',
+                  'CSS',
+                  'GIT',
+                  'GITHUB',
                 ].map((skill, index) => (
                   <div key={index} className="flex items-center px-4 md:px-12">
                     <span className="font-body font-black text-sm md:text-2xl text-white hover:italic hover:scale-105 active:scale-95 transition-all duration-300 cursor-crosshair whitespace-nowrap">

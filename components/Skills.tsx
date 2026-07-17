@@ -49,18 +49,12 @@ const Skills: React.FC = () => {
             transition={{ duration: 0.6 }}
             className="flex flex-col items-center"
           >
-            <div className="flex items-center gap-3 mb-4">
-              <span className="w-2.5 h-2.5 bg-[var(--vintage-accent-1)] rounded-none" />
-              <span className="text-zinc-500 font-body text-[10px] tracking-[0.4em] uppercase font-bold">TECH STACK</span>
+            <div className="flex items-center gap-3">
+              <span className="w-3.5 h-3.5 bg-[var(--vintage-accent-1)] rounded-none" />
+              <h2 className="text-4xl md:text-6xl font-headline font-black text-white leading-none uppercase tracking-[0.3em] font-bold">
+                TECH STACK
+              </h2>
             </div>
-
-            <h2 className="text-4xl md:text-7xl font-headline font-black text-white leading-none uppercase tracking-tighter mb-6">
-              CORE <span className="font-headline italic font-light text-[var(--vintage-accent-1)]">ENGINE.</span>
-            </h2>
-
-            <p className="text-zinc-500 font-body text-xs leading-relaxed max-w-2xl uppercase tracking-wider font-semibold">
-              A highly optimized, modern toolkit compiled for exceptional performance, speed, and premium user experiences.
-            </p>
           </motion.div>
         </div>
 

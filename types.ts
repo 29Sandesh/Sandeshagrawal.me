@@ -43,3 +43,11 @@ export interface GalleryImage {
   title: string;
   span?: string;
 }
+
+export interface Certification {
+  id: string;
+  title: string;
+  issuer: string;
+  link: string;
+}
+

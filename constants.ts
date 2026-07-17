@@ -1,8 +1,8 @@
 
-import { Project, SkillData, Experience, GalleryImage } from './types';
+import { Project, SkillData, Experience, GalleryImage, Certification } from './types';
 
 export const HERO_TITLE = "Sandesh Agrawal";
-export const HERO_SUBTITLE = "Full Stack Developer with 3+ years of experience building and shipping web apps across React, Node.js, and MongoDB. Delivered 25+ client projects with proven Lighthouse scores and high-performance standards.";
+export const HERO_SUBTITLE = "Full Stack Developer with hands-on experience building 10+ production-ready SaaS platforms, AI-powered applications, and enterprise software using React, Next.js, Node.js, TypeScript, and GraphQL.";
 
 
 export const SOCIAL_LINKS = {
@@ -21,10 +21,10 @@ export const MARQUEE_ITEMS = [
 ];
 
 export const SKILL_DETAILS = {
-  Frontend: ['React 19', 'Next.js', 'TypeScript', 'JavaScript', 'Vite', 'Tailwind CSS', 'Framer Motion', 'Zustand'],
-  Backend: ['Node.js', 'Express.js', 'REST APIs', 'GraphQL', 'Socket.io', 'JWT Authentication', 'Sharp', 'Bcrypt'],
-  Databases: ['MongoDB', 'Supabase', 'Redis', 'SQLite', 'Mongoose'],
-  'Tools & Tech': ['Docker', 'Kubernetes', 'Postman', 'Git', 'GitHub']
+  Frontend: ['React', 'Next.js', 'Tailwind CSS', 'Vite', 'HTML/CSS', 'JavaScript', 'TypeScript'],
+  Backend: ['Node.js', 'Express.js', 'GraphQL', 'REST APIs', 'Python', 'Java'],
+  Databases: ['MongoDB', 'PostgreSQL (Supabase)', 'Firebase'],
+  'Tools & Tech': ['AWS', 'Git', 'GitHub']
 };
 
 export const SKILLS_DATA: SkillData[] = [
@@ -35,6 +35,24 @@ export const SKILLS_DATA: SkillData[] = [
 ];
 
 export const PROJECTS: Project[] = [
+  {
+    id: 'codeleads',
+    title: 'CodeLeads — B2B Lead Gen Platform',
+    description: 'Built an autonomous AI lead generation platform that automates local business discovery, lead qualification, and outreach. Developed AI agents using Google ADK and Groq API to search businesses, filter qualified leads, and compose personalized emails, integrating Firebase and MongoDB for session/lead management.',
+    tech: ['React', 'TypeScript', 'Google ADK', 'Groq API', 'Firebase', 'MongoDB'],
+    imageUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1600',
+    link: 'https://fabulous-salamander-1efab4.netlify.app/',
+    featured: true
+  },
+  {
+    id: 'foodfranchiseindia',
+    title: 'FoodFranchiseIndia Platform',
+    description: 'Engineered a multi-portal franchise management SaaS with 6 role-based portals and secure access control. Built a programmatic SEO engine generating 10,000+ landing pages alongside integrated CRM and LMS modules, franchise discovery, and financing workflows.',
+    tech: ['React', 'TypeScript', 'Node.js', 'MongoDB'],
+    imageUrl: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=1600',
+    link: 'https://celadon-tartufo-d731f4.netlify.app/',
+    featured: true
+  },
   {
     id: 'the-circle',
     title: 'The CirCle — Real-Time Enterprise Hub',
@@ -198,43 +216,36 @@ export const EXPERIENCE: Experience[] = [
     id: 'exp-1',
     role: 'Full Stack Developer',
     company: 'CODEHTML',
-    type: 'Full-time · Remote',
+    type: 'Freelance · Remote',
     period: 'July 2025 - Present',
     description: 'Full Stack Developer at CODEHTML.',
     points: [
-      'Delivered 15+ scalable SaaS platforms, AI Projects and startup MVPs using React, Node.js, MongoDB, and Supabase.',
-      'Engineered real-time systems, intelligent dashboards, and scalable backend services for high-performance applications.',
-      'Partnered with startup founders to design, develop, and launch production-ready products across diverse business domains.'
+      'Developed and maintained 10+ production web applications for startup clients using React, Node.js, and MongoDB.',
+      'Built reusable white-label SaaS modules and shared components, accelerating development across multiple client projects.',
+      'Collaborated directly with startup founders to design, develop, and deliver production-ready web applications.',
+      'Built FoodFranchiseIndia.com, a multi-portal SaaS platform featuring CRM, franchise resale, and a programmatic SEO engine generating 10,000+ landing pages.'
     ]
   },
   {
     id: 'exp-2',
     role: 'Full Stack Developer',
     company: 'Axipays',
-    type: 'Full-time · On-site',
+    type: 'Internship · On-site',
     location: 'Indore, Madhya Pradesh, India · On-site',
     period: 'Jan 2025 - June 2025',
     description: 'Full Stack Developer at Axipays.',
     points: [
-      'Built payment interfaces integrated with multiple payment gateways, enabling seamless transaction workflows across fintech.',
-      'Developed internal dashboards and reporting systems to streamline operations and improve business decision-making.',
-      'Integrated 15+ APIs and backend services to support payment processing and financial workflows.'
-    ]
-  },
-  {
-    id: 'exp-3',
-    role: 'Website Developer',
-    company: 'Tasty Alphabets Pvt. Ltd.',
-    type: 'Full-time · On-site',
-    location: 'On-site',
-    period: 'Jan 2023 - Dec 2024',
-    description: 'Website Developer at Tasty Alphabets Pvt. Ltd.',
-    points: [
-      'Built and deployed 10+ production websites for restaurants, cafes, and food businesses across multiple industries.',
-      'Collaborated with 20+ clients and stakeholders on branding, UI systems, and feature implementation.',
-      'Developed responsive frontend systems optimized for customer engagement and operational workflows.'
+      'Developed secure REST APIs and integration documentation that enabled 3+ third-party payment gateways to onboard and communicate with the platform through API key authentication.',
+      'Built internal dashboards for payment orchestration, providing real-time visibility into transactions and payment statuses.',
+      'Implemented transaction routing and automated retry workflows to improve payment reliability across multiple providers.',
+      'Worked with engineers to troubleshoot API integrations, optimize payment flows, and improve overall platform reliability.'
     ]
   }
+];
+
+export const CERTIFICATIONS: Certification[] = [
+  { id: 'cert-1', title: 'AI Essentials Specialization', issuer: 'Coursera', link: 'https://www.coursera.org/account/accomplishments/specialization/M1ZX6PYXO4UO' },
+  { id: 'cert-2', title: 'Full Stack Developer Certification', issuer: 'micro1', link: 'https://micro1-portal-data.s3.amazonaws.com/engineer-certificates/1779019035-9e8ade6d-1b69-4b16-80d5-72674635f8f4.jpg' }
 ];
 
 export const GALLERY_IMAGES: GalleryImage[] = [
@@ -272,28 +283,31 @@ export const GALLERY_IMAGES: GalleryImage[] = [
 
 export const UI_ASSISTANT_INSTRUCTION = `
 You are "A.L.E.X.", the Smart Interface Assistant for Sandesh Agrawal's portfolio website.
-Sandesh is a MERN Stack / Full Stack Developer based in Indore, India, with over 3 years of experience.
+Sandesh is a Full Stack Developer based in Indore, India.
 
 Educational Background:
 - IPS Academy, Indore: B.Tech in Information Technology (2022-2026), CGPA: 7.2.
 
 Professional Tech Stack:
-- Frontend: React 19, Next.js, TypeScript, JavaScript, Vite, Tailwind CSS, Framer Motion, Zustand.
+- Languages: JavaScript, TypeScript, Python, Java, HTML/CSS.
+- Frontend: React 19, Next.js, Tailwind CSS, Vite, Framer Motion, Zustand.
 - Backend: Node.js, Express.js, REST APIs, GraphQL, Socket.io, JWT Authentication, Sharp, Bcrypt.
-- Databases & Cloud: MongoDB, Supabase, Redis, SQLite, Mongoose, Docker, Kubernetes, Postman.
+- Databases & Cloud: MongoDB, PostgreSQL (Supabase), Redis, SQLite, Mongoose, AWS, Firebase, Docker, Kubernetes.
 
 Professional Experience:
-- CODEHTML (July 2025 - Present): Full Stack Developer (Remote). Delivered 15+ scalable SaaS platforms, AI Projects and startup MVPs using React, Node.js, MongoDB, and Supabase.
-- Axipays (Jan 2025 - June 2025): Full Stack Developer (On-site). Built payment interfaces integrated with multiple payment gateways.
-- Tasty Alphabets Pvt. Ltd. (Jan 2023 - Dec 2024): Website Developer (On-site). Built and deployed 10+ production websites.
+- CODEHTML (July 2025 - Present): Full Stack Developer (Freelance · Remote). Developed and maintained 10+ production web applications for startup clients using React, Node.js, and MongoDB. Built FoodFranchiseIndia.com, a multi-portal SaaS platform.
+- Axipays (Jan 2025 - June 2025): Full Stack Developer (Internship · On-site). Developed secure REST APIs and integration documentation that enabled 3+ third-party payment gateways, transaction routing, and automated retries.
 
 Key Projects:
+- CodeLeads — B2B Lead Generation Platform: Autonomous AI lead generation system using Google ADK and Groq API.
+- FoodFranchiseIndia Platform: Multi-portal franchise management SaaS with 6 role-based portals, secure RBAC, programmatic SEO engine.
 - The CirCle — Real-Time Enterprise Hub: Scalable collaboration platform with CRDT editing, GraphQL, Redis Sentinel clustering, and Kubernetes.
 - Cofound — Founder Networking Platform: Mobile-first founder matchmaking platform built using React 19, Capacitor, and Supabase.
 - SwigatoIndia Website: AI-optimized restaurant platform generating 1,115+ city landing pages.
-- Codehtml.in: Agency website with 90+ Lighthouse scores.
-- Patel Sangathan: Community platform with search and auth.
-- Elgamingo: Gaming platform with leaderboards.
 
-Keep responses technical yet approachable. Emphasize his ability with MERN stack, performance optimization, and SEO.
+Certifications:
+- AI Essentials Specialization — Coursera
+- Full Stack Developer Certification — micro1
+
+Keep responses technical yet approachable. Emphasize his ability with MERN/Full Stack, AI integration, performance optimization, and SEO.
 `;
