@@ -1,6 +1,6 @@
 # 🕸️ Sandeshagrawal.me
 
-> Professional Full-Stack Web & Native Android Developer Portfolio.
+> Professional Technical GTM Engineer Portfolio — Building AI-Powered Systems That Drive Growth.
 
 ---
 

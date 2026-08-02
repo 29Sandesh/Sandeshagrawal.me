@@ -3,9 +3,14 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import ExperienceSection from './ExperienceSection';
 import Navbar from './Navbar';
+import SEOHead from './SEOHead';
 
 const ExperiencePage: React.FC = () => (
     <div className="min-h-screen bg-black text-white">
+        <SEOHead
+            title="Career Experience & Growth Engineering Track Record"
+            description="Engineering career history of Sandesh Agrawal including Technical GTM Engineer roles at CODEHTML and Axipays."
+        />
         <div
             className="fixed inset-0 opacity-[0.015] pointer-events-none z-0"
             style={{
@@ -25,7 +30,7 @@ const ExperiencePage: React.FC = () => (
             </motion.div>
             <footer className="border-t border-white/5 py-12 text-center">
                 <p className="text-white/10 font-mono text-xs tracking-[0.5em] uppercase">
-                    Sandesh Agrawal — Full Stack Developer — {new Date().getFullYear()}
+                    Sandesh Agrawal — Technical GTM Engineer — {new Date().getFullYear()}
                 </p>
             </footer>
         </div>

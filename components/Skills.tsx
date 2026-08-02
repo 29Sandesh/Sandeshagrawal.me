@@ -5,56 +5,42 @@ import { SKILL_DETAILS } from '../constants';
 const Skills: React.FC = () => {
   const categories = [
     {
-      title: "Frontend",
-      skills: SKILL_DETAILS.Frontend,
-      description: "Architecting high-performance, responsive user interfaces with modern frameworks."
+      title: "GTM & RevOps Tools",
+      skills: SKILL_DETAILS['GTM & RevOps Tools'],
+      description: "Orchestrating outbound engines, CRM pipelines, and automated lead capture with Clay, HubSpot, Salesforce, Apollo, Instantly & n8n."
     },
     {
-      title: "Backend",
-      skills: SKILL_DETAILS.Backend,
-      description: "Building scalable server-side logic and robust API architectures."
+      title: "Data & AI Automation",
+      skills: SKILL_DETAILS['Data & AI Automation'],
+      description: "Waterfall enrichment logic, LLM APIs (OpenAI/Claude/Gemini), ZoomInfo, Clearbit, Hunter.io & LangChain."
     },
     {
-      title: "Databases",
-      skills: SKILL_DETAILS.Databases,
-      description: "Designing efficient data models and managing complex database systems."
+      title: "Full-Stack Engineering",
+      skills: SKILL_DETAILS['Full-Stack Engineering'],
+      description: "Architecting high-performance web applications using React 19, Next.js, Node.js, Express, GraphQL & Tailwind CSS."
     },
     {
-      title: "Tools & Tech",
-      skills: SKILL_DETAILS['Tools & Tech'],
-      description: "Optimizing development workflows with industry-standard tooling."
+      title: "Databases & Integration",
+      skills: SKILL_DETAILS['Databases & Integration'],
+      description: "MongoDB, PostgreSQL (Supabase), AWS, Firebase, webhooks, REST APIs, CRM object modeling & complex SQL queries."
     }
   ];
 
   return (
-    <section id="skills" className="py-16 md:py-24 bg-black relative overflow-hidden border-b-4 border-zinc-800">
-      {/* Brutalist Grid Lines Background */}
-      <div
-        className="absolute inset-0 opacity-[0.02] pointer-events-none z-0"
-        style={{
-          backgroundImage:
-            'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)',
-          backgroundSize: '40px 40px',
-        }}
-      />
-
+    <section id="skills" className="py-16 md:py-24 bg-slate-50 relative overflow-hidden border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Full-Width Header */}
-        <div className="flex flex-col items-center text-center mb-12 md:mb-16">
+        {/* Header - Left Aligned, No Dot */}
+        <div className="flex flex-col items-start text-left mb-12 md:mb-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="flex flex-col items-center"
           >
-            <div className="flex items-center gap-3">
-              <span className="w-3.5 h-3.5 bg-[var(--vintage-accent-1)] rounded-none" />
-              <h2 className="text-4xl md:text-6xl font-headline font-black text-white leading-none uppercase tracking-[0.3em] font-bold">
-                TECH STACK
-              </h2>
-            </div>
+            <h2 className="text-4xl md:text-5xl font-headline font-black text-slate-900 leading-none uppercase tracking-[0.15em]">
+              TECH STACK
+            </h2>
           </motion.div>
         </div>
 
@@ -67,40 +53,35 @@ const Skills: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="border-4 border-zinc-800 bg-zinc-950 p-6 flex flex-col justify-between rounded-none shadow-[6px_6px_0px_0px_rgba(39,39,42,0.5)] hover:shadow-[10px_10px_0px_0px_rgba(155,28,28,0.4)] hover:border-zinc-700 transition-all duration-300 group relative overflow-hidden"
+              className="border border-slate-200 bg-white p-6 flex flex-col justify-between rounded-2xl shadow-lg shadow-slate-200/50 hover:shadow-xl hover:shadow-blue-500/10 hover:border-blue-400 transition-all duration-300 group relative overflow-hidden"
             >
-              {/* Large Faint Corner Index Number */}
-              <div className="absolute -bottom-6 -right-4 text-[6rem] font-headline font-black text-white/[0.01] group-hover:text-[var(--vintage-accent-1)]/[0.03] select-none pointer-events-none z-0 transition-colors duration-500">
-                0{i + 1}
-              </div>
-
               <div className="relative z-10 flex flex-col h-full justify-between">
                 <div>
                   {/* Card Header Label */}
-                  <div className="flex justify-between items-center mb-4 pb-4 border-b-2 border-zinc-900">
-                    <span className="text-[var(--vintage-accent-1)] font-body text-[10px] tracking-widest uppercase font-black">
+                  <div className="flex justify-between items-center mb-4 pb-4 border-b border-slate-100">
+                    <span className="text-blue-600 font-body text-xs tracking-widest uppercase font-bold">
                       /0{i + 1}
                     </span>
-                    <span className="w-1.5 h-1.5 bg-zinc-800 group-hover:bg-[var(--vintage-accent-1)] transition-colors duration-300" />
+                    <span className="w-2 h-2 rounded-full bg-blue-600/30 group-hover:bg-blue-600 transition-colors duration-300" />
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-xl md:text-2xl font-headline font-black text-white uppercase tracking-tighter leading-tight mb-2">
+                  <h3 className="text-xl font-headline font-black text-slate-900 uppercase tracking-tight leading-tight mb-3">
                     {cat.title}
                   </h3>
 
                   {/* Summary / Description */}
-                  <p className="text-zinc-500 font-body text-[10px] uppercase tracking-wider leading-relaxed mb-6">
+                  <p className="text-slate-500 font-body text-xs leading-relaxed mb-6 font-light">
                     {cat.description}
                   </p>
                 </div>
 
                 {/* Skills Chips */}
-                <div className="flex flex-wrap gap-1.5 z-10 mt-auto">
+                <div className="flex flex-wrap gap-2 z-10 mt-auto">
                   {cat.skills.map((skill) => (
                     <span
                       key={skill}
-                      className="text-[8px] font-body font-bold text-zinc-400 border border-zinc-900 bg-black px-2 py-0.5 uppercase tracking-wider group-hover:border-zinc-800 group-hover:text-white transition-colors duration-300 rounded-none"
+                      className="px-2.5 py-1 bg-slate-100 border border-slate-200 group-hover:border-blue-200 text-slate-700 font-mono text-[10px] uppercase font-semibold rounded-md transition-colors"
                     >
                       {skill}
                     </span>
@@ -110,7 +91,6 @@ const Skills: React.FC = () => {
             </motion.div>
           ))}
         </div>
-
       </div>
     </section>
   );

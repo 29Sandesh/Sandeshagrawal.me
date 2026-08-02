@@ -1,0 +1,4 @@
+# Netlify 301 Redirects for Legacy City URLs to New GTM 3-Tier Hierarchy
+
+# Fallback redirect for SPA Routing
+/*    /index.html   200

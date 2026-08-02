@@ -7,15 +7,13 @@ import AboutMe from './components/AboutMe';
 import Skills from './components/Skills';
 import ExperienceSection from './components/ExperienceSection';
 import Projects from './components/Projects';
-import Pricing from './components/Pricing';
 import Contact from './components/Contact';
-import GameLauncher from './components/GameLauncher';
+import SocialProofStrip from './components/SocialProofStrip';
+import Footer from './components/Footer';
 import WhatsAppFloat from './components/WhatsAppFloat';
 
-// Components
-import HeroVideoIntro from './components/HeroVideoIntro';
-
 // Pages
+import CaseStudiesPage from './components/CaseStudiesPage';
 import AboutPage from './components/AboutPage';
 import SkillsPage from './components/SkillsPage';
 import ExperiencePage from './components/ExperiencePage';
@@ -25,62 +23,17 @@ import ContactPage from './components/ContactPage';
 import ProjectDetail from './components/ProjectDetail';
 import BlogPage from './components/BlogPage';
 import CityPage from './components/CityPage';
+import StatePage from './components/StatePage';
+import NationalGTMHub from './components/NationalGTMHub';
+import BestGTMBlogPage from './components/BestGTMBlogPage';
+import GTMVerticalsHub from './components/GTMVerticalsHub';
+import VerticalGTMPage from './components/VerticalGTMPage';
+import NotFoundPage from './components/NotFoundPage';
+import SEOHead from './components/SEOHead';
 import { MARQUEE_ITEMS } from './constants';
 
 const App: React.FC = () => {
   const path = window.location.pathname;
-  const [showIntro, setShowIntro] = useState(path === '/' || path === '');
-
-  // Lock body scroll when intro is active
-  useEffect(() => {
-    if (showIntro && (path === '/' || path === '')) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
-    return () => {
-      document.body.style.overflow = '';
-    };
-  }, [showIntro, path]);
-
-  // Bring back video intro when scrolling up at top of homepage
-  useEffect(() => {
-    if (showIntro || (path !== '/' && path !== '')) return;
-
-    let touchStartY: number | null = null;
-
-    const handleWheel = (e: WheelEvent) => {
-      if (window.scrollY <= 5 && e.deltaY < -10) {
-        setShowIntro(true);
-      }
-    };
-
-    const handleTouchStart = (e: TouchEvent) => {
-      if (e.touches.length === 1) {
-        touchStartY = e.touches[0].clientY;
-      }
-    };
-
-    const handleTouchMove = (e: TouchEvent) => {
-      if (touchStartY === null || e.touches.length !== 1) return;
-      const currentY = e.touches[0].clientY;
-      const deltaY = currentY - touchStartY; // positive deltaY means swipe down / scroll up
-      if (window.scrollY <= 5 && deltaY > 40) {
-        setShowIntro(true);
-        touchStartY = null;
-      }
-    };
-
-    window.addEventListener('wheel', handleWheel, { passive: true });
-    window.addEventListener('touchstart', handleTouchStart, { passive: true });
-    window.addEventListener('touchmove', handleTouchMove, { passive: true });
-
-    return () => {
-      window.removeEventListener('wheel', handleWheel);
-      window.removeEventListener('touchstart', handleTouchStart);
-      window.removeEventListener('touchmove', handleTouchMove);
-    };
-  }, [showIntro, path]);
 
   useEffect(() => {
     const updateScrollProgress = () => {
@@ -114,16 +67,38 @@ const App: React.FC = () => {
     );
   }
 
-  // Handle /web-development-in/:city-slug (Programmatic SEO)
+  // Handle /gtm-engineer national hub, state hub, and city landing routes
+  if (path === '/gtm-engineer' || path === '/gtm-engineer/') {
+    return <NationalGTMHub />;
+  }
+
+  if (path.startsWith('/gtm-engineer/')) {
+    const parts = path.replace(/\/+$/, '').split('/').filter(Boolean);
+    // parts[0] is 'gtm-engineer'
+    if (parts.length === 2) {
+      // /gtm-engineer/:stateSlug
+      return <StatePage stateSlug={parts[1]} />;
+    } else if (parts.length >= 3) {
+      // /gtm-engineer/:stateSlug/:citySlug
+      return <CityPage stateSlug={parts[1]} citySlug={parts[2]} />;
+    }
+  }
+
+  // Backward compatibility for /web-development-in/:city-slug
   if (path.startsWith('/web-development-in/')) {
     const citySlug = path.split('/')[2];
     if (citySlug) return <CityPage citySlug={citySlug} />;
   }
 
-  // Handle /blog/:slug (Actual Blogs)
+  // Handle /blog/:slug (Actual Blogs & Best GTM Engineer Listicles)
   if (path.startsWith('/blog/')) {
     const slug = path.split('/')[2];
     if (slug) {
+      if (slug.startsWith('best-gtm-engineer-in-') || slug === 'best-gtm-engineer-in-india') {
+        const locationSlug = slug.replace('best-gtm-engineer-in-', '');
+        return <BestGTMBlogPage slug={locationSlug} />;
+      }
+
       return (
         <React.Suspense fallback={<div className="bg-black text-white min-h-screen">Loading...</div>}>
           {React.createElement(React.lazy(() => import('./components/BlogPost')))}
@@ -132,43 +107,55 @@ const App: React.FC = () => {
     }
   }
 
+  // Handle /services and /services/:verticalSlug (High-Intent B2B Services)
+  if (path === '/services' || path === '/services/') {
+    return <GTMVerticalsHub />;
+  }
+
+  if (path.startsWith('/services/')) {
+    const slug = path.split('/')[2];
+    if (slug) return <VerticalGTMPage slug={slug} />;
+  }
+
+  // Handle /case-studies
+  if (path === '/case-studies' || path === '/case-studies/') {
+    return <CaseStudiesPage />;
+  }
+
   // Handle /projects/:slug (Case Study)
   if (path.startsWith('/projects/')) {
     const slug = path.split('/')[2];
     if (slug) return <ProjectDetail slug={slug} />;
   }
 
+  // ── 404 Fallback for unknown top-level routes ──────────────────────────────
+  if (path !== '/' && path !== '') {
+    return <NotFoundPage />;
+  }
+
   // ── Homepage ───────────────────────────────────────────────────────────────
   return (
     <>
-      <AnimatePresence mode="wait">
-        {showIntro && (
-          <HeroVideoIntro onDismiss={() => setShowIntro(false)} />
-        )}
-      </AnimatePresence>
-
-      <div className="min-h-screen bg-[#000000] text-slate-200">
+      <SEOHead 
+        title="Sandesh Agrawal | Technical GTM Engineer"
+        description="Sandesh Agrawal is a Technical GTM Engineer building AI-powered systems that drive growth: lead generation platforms, outbound automation, AI agents, and growth infrastructure."
+      />
+      <div className="min-h-screen bg-slate-50 text-slate-900 font-sans">
         <Navbar />
 
         <main>
           <Hero />
+          <SocialProofStrip />
 
           {/* Home Sections Flow */}
           <section id="biography"><AboutMe /></section>
           <section id="skills"><Skills /></section>
-          <section id="experience"><ExperienceSection /></section>
           <section id="projects"><Projects /></section>
-          <section id="pricing"><Pricing /></section>
           <section id="contact"><Contact /></section>
         </main>
 
-        <footer className="py-16 border-t-4 border-zinc-800 bg-black text-center">
-          <p className="text-zinc-500 text-[10px] font-body uppercase tracking-[0.8em]">
-            Sandesh Agrawal — {new Date().getFullYear()} — Building Elite Digital Legacies
-          </p>
-        </footer>
+        <Footer />
 
-        <GameLauncher accentColor="#ffffff" />
         <WhatsAppFloat />
 
         <style>{`

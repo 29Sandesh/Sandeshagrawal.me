@@ -5,9 +5,8 @@ let chatSession: any = null;
 let genAI: GoogleGenAI | null = null;
 
 export const initializeGemini = (): boolean => {
-  const apiKey = process.env.API_KEY;
+  const apiKey = (import.meta as any).env?.VITE_GEMINI_API_KEY || (typeof process !== 'undefined' ? process.env?.VITE_GEMINI_API_KEY : undefined);
   if (!apiKey) {
-    console.error("API_KEY is missing in environment variables.");
     return false;
   }
   
@@ -15,7 +14,7 @@ export const initializeGemini = (): boolean => {
     genAI = new GoogleGenAI({ apiKey });
     return true;
   } catch (error) {
-    console.error("Failed to initialize Gemini:", error);
+    console.warn("Failed to initialize Gemini:", error);
     return false;
   }
 };

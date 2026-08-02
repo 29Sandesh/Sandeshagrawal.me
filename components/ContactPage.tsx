@@ -1,218 +1,184 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Linkedin, Send, Check } from 'lucide-react';
+import { Mail, Linkedin, Send, MessageSquare, ArrowRight, Github, Sparkles, Building2, HelpCircle } from 'lucide-react';
 import { SOCIAL_LINKS } from '../constants';
 import Navbar from './Navbar';
-
-const PRICING = [
-    {
-        tier: 'Starter',
-        price: '₹8,000',
-        sub: 'One-time',
-        desc: 'Perfect for freelancers, small businesses, or personal brands needing a clean online presence.',
-        features: [
-            '3–5 page responsive website',
-            'Mobile-first design',
-            'Basic SEO setup',
-            'Contact form integration',
-            '1 round of revisions',
-            '7-day delivery',
-        ],
-        highlight: false,
-    },
-    {
-        tier: 'Professional',
-        price: '₹20,000',
-        sub: 'One-time',
-        desc: 'For growing businesses that need a polished, modern website with advanced features.',
-        features: [
-            'Up to 10 pages',
-            'Custom animations & transitions',
-            'CMS or dynamic content',
-            'REST API / third-party integrations',
-            'Performance optimized (90+ Lighthouse)',
-            '3 rounds of revisions',
-            '14-day delivery',
-        ],
-        highlight: true,
-    },
-    {
-        tier: 'Enterprise',
-        price: 'Custom',
-        sub: 'Project-based',
-        desc: 'Full-scale web products, platforms, or long-term retainer engagements.',
-        features: [
-            'Unlimited pages & complexity',
-            'Full-stack (React + Node + DB)',
-            'Payment gateway integration',
-            'Authentication & dashboards',
-            'Ongoing maintenance & support',
-            'Dedicated communication channel',
-        ],
-        highlight: false,
-    },
-];
+import Footer from './Footer';
+import SEOHead from './SEOHead';
 
 const ContactPage: React.FC = () => {
     return (
-        <div className="min-h-screen bg-black text-white">
-            <div
-                className="fixed inset-0 opacity-[0.015] pointer-events-none z-0"
-                style={{
-                    backgroundImage:
-                        'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)',
-                    backgroundSize: '40px 40px',
-                }}
+        <div className="min-h-screen bg-slate-50 text-slate-900 selection:bg-blue-600 selection:text-white font-sans">
+            <SEOHead
+                title="Contact | Sandesh Agrawal — Technical GTM Engineer"
+                description="Get in touch with Sandesh Agrawal for GTM engineering, AI lead generation systems, outbound automation, and RevOps infrastructure projects."
+                keywords="Contact Sandesh Agrawal, Hire GTM Engineer, Technical GTM Consultation, Outbound Automation Contact"
             />
+            {/* SEO Meta Tags (Semantic Web) */}
+            <header className="sr-only">
+                <h1>Contact Sandesh Agrawal - Technical GTM Engineer</h1>
+                <p>Get in touch with Sandesh Agrawal to discuss technical GTM engineering, AI lead generation engines, outbound automation, and RevOps data pipelines.</p>
+            </header>
 
-            <div className="relative z-10">
+            <div className="relative z-10 w-full">
                 <Navbar alwaysVisible />
 
-                {/* Hero */}
-                <div className="max-w-7xl mx-auto px-6 pt-24 pb-8 md:pt-32 md:pb-12">
-                    <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-                        <p className="text-white/30 font-mono text-xs tracking-[0.5em] uppercase mb-4">Let's Build Together</p>
-                        <h1 className="text-5xl md:text-7xl font-bold font-syncopate uppercase tracking-tighter leading-none">
-                            GET IN<br /><span className="text-transparent stroke-text">TOUCH.</span>
+                {/* Main Container */}
+                <main className="max-w-7xl mx-auto px-6 pt-32 pb-16">
+
+                    {/* Header */}
+                    <motion.div
+                        className="mb-8 text-left"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5 }}
+                    >
+                        <h1 className="text-3xl sm:text-5xl font-bold font-syncopate uppercase tracking-tight leading-none text-slate-900 mb-2">
+                            Contact us
                         </h1>
-                    </motion.div>
-                </div>
-
-                {/* Contact Details */}
-                <div className="max-w-7xl mx-auto px-6 pb-20">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12">
-                        <motion.a
-                            href={`mailto:${SOCIAL_LINKS.email}`}
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.1 }}
-                            className="group flex items-center gap-6 p-8 border border-white/10 hover:border-white/30 hover:bg-white/[0.03] transition-all duration-500"
-                        >
-                            <div className="w-12 h-12 border border-white/10 flex items-center justify-center group-hover:border-white/30 transition-colors">
-                                <Mail className="h-5 w-5 text-white/50 group-hover:text-white transition-colors" />
-                            </div>
-                            <div>
-                                <p className="text-white/30 font-mono text-[9px] uppercase tracking-widest mb-1">Email</p>
-                                <p className="text-white text-lg font-light">{SOCIAL_LINKS.email}</p>
-                            </div>
-                        </motion.a>
-
-                        <motion.a
-                            href={SOCIAL_LINKS.linkedin}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.15 }}
-                            className="group flex items-center gap-6 p-8 border border-white/10 hover:border-white/30 hover:bg-white/[0.03] transition-all duration-500"
-                        >
-                            <div className="w-12 h-12 border border-white/10 flex items-center justify-center group-hover:border-white/30 transition-colors">
-                                <Linkedin className="h-5 w-5 text-white/50 group-hover:text-white transition-colors" />
-                            </div>
-                            <div>
-                                <p className="text-white/30 font-mono text-[9px] uppercase tracking-widest mb-1">LinkedIn</p>
-                                <p className="text-white text-lg font-light">sandeshagrawal29</p>
-                            </div>
-                        </motion.a>
-                    </div>
-
-                    {/* --- PRICING --- */}
-                    <div className="mb-12">
-                        <div className="flex items-center gap-4 mb-12">
-                            <div className="h-px flex-1 bg-white/5" />
-                            <span className="text-white/30 font-mono text-xs uppercase tracking-[0.5em]">Pricing</span>
-                            <div className="h-px flex-1 bg-white/5" />
-                        </div>
-
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                            {PRICING.map((plan, i) => (
-                                <motion.div
-                                    key={plan.tier}
-                                    initial={{ opacity: 0, y: 30 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ delay: 0.1 + i * 0.1 }}
-                                    className={`relative p-8 border flex flex-col transition-all duration-500 ${plan.highlight
-                                        ? 'border-white/40 bg-white/[0.04]'
-                                        : 'border-white/10 hover:border-white/20 hover:bg-white/[0.02]'
-                                        }`}
-                                >
-                                    {plan.highlight && (
-                                        <div className="absolute -top-3 left-8 bg-white text-black text-[8px] font-bold tracking-[0.3em] uppercase px-3 py-1">
-                                            MOST POPULAR
-                                        </div>
-                                    )}
-
-                                    <div className="mb-6">
-                                        <p className="text-white/30 font-mono text-[9px] uppercase tracking-widest mb-2">{plan.tier}</p>
-                                        <div className="flex items-end gap-2 mb-3">
-                                            <span className="text-4xl md:text-5xl font-bold font-syncopate text-white">{plan.price}</span>
-                                            <span className="text-white/30 font-mono text-xs mb-2">{plan.sub}</span>
-                                        </div>
-                                        <p className="text-white/40 text-sm font-light leading-relaxed">{plan.desc}</p>
-                                    </div>
-
-                                    <ul className="space-y-3 flex-1 mb-8">
-                                        {plan.features.map(f => (
-                                            <li key={f} className="flex items-start gap-3 text-sm text-white/60">
-                                                <Check className="h-4 w-4 text-white/30 flex-shrink-0 mt-0.5" />
-                                                {f}
-                                            </li>
-                                        ))}
-                                    </ul>
-
-                                    <a
-                                        href={`mailto:${SOCIAL_LINKS.email}?subject=Inquiry: ${plan.tier} Plan`}
-                                        className={`flex items-center justify-center gap-2 px-6 py-3 text-xs font-mono uppercase tracking-widest transition-all duration-300 ${plan.highlight
-                                            ? 'bg-white text-black hover:bg-white/90'
-                                            : 'border border-white/20 text-white/60 hover:text-white hover:border-white/40'
-                                            }`}
-                                    >
-                                        Get Started
-                                    </a>
-                                </motion.div>
-                            ))}
-                        </div>
-
-                        <p className="text-white/20 font-mono text-[9px] uppercase tracking-widest text-center mt-6">
-                            All prices are negotiable. Custom quotes available — just reach out.
+                        <p className="text-base sm:text-lg text-slate-600 font-light max-w-xl leading-relaxed">
+                            Get in touch and let us know how we can help.
                         </p>
-                    </div>
+                    </motion.div>
 
-                    {/* WhatsApp Direct CTA */}
-                    <div className="border-t border-zinc-900 pt-16 text-center">
-                        <div className="flex items-center gap-4 mb-12">
-                            <div className="h-px flex-1 bg-zinc-900" />
-                            <span className="text-zinc-500 font-body text-xs font-bold uppercase tracking-[0.5em]">INSTANT CONNECT</span>
-                            <div className="h-px flex-1 bg-zinc-900" />
-                        </div>
+                    {/* 3-Card Grid Section */}
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
 
-                        <div className="max-w-2xl mx-auto py-12 px-6 border-4 border-zinc-800 bg-zinc-950 shadow-[6px_6px_0px_0px_rgba(39,39,42,0.5)]">
-                            <h3 className="text-2xl md:text-3xl font-headline font-black text-white uppercase tracking-tighter mb-4">
-                                START A CONVERSATION
-                            </h3>
-                            <p className="text-zinc-400 text-sm leading-relaxed mb-8 max-w-md mx-auto font-body font-medium">
-                                Skip the email forms and let's get straight to the point. Tap the button below to connect with me directly on WhatsApp in real-time.
-                            </p>
+                        {/* Card 1: Outbound & GTM */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, delay: 0.1 }}
+                            className="group p-6 border border-slate-200 bg-white hover:border-blue-500 hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300 rounded-2xl flex flex-col justify-between shadow-md shadow-slate-200/50"
+                        >
+                            <div>
+                                <div className="w-10 h-10 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center mb-4 text-blue-600 group-hover:scale-110 transition-transform">
+                                    <Building2 className="w-5 h-5" />
+                                </div>
+
+                                <h2 className="text-xl font-bold text-slate-900 mb-2 tracking-tight">
+                                    Outbound & GTM
+                                </h2>
+
+                                <p className="text-slate-600 text-xs sm:text-sm font-light leading-relaxed mb-5">
+                                    I'd love to talk about how we can work together on your outbound automation and growth infrastructure.
+                                </p>
+                            </div>
+
+                            <a
+                                href={`mailto:${SOCIAL_LINKS.email}?subject=Project Inquiry - GTM Outbound Engine`}
+                                className="inline-flex items-center justify-center gap-2 px-5 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs rounded-xl uppercase tracking-wider transition-all duration-300 w-full shadow-sm shadow-blue-500/20"
+                            >
+                                Contact me <ArrowRight className="w-4 h-4" />
+                            </a>
+                        </motion.div>
+
+                        {/* Card 2: Email & Support */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, delay: 0.2 }}
+                            className="group p-6 border border-slate-200 bg-white hover:border-blue-500 hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300 rounded-2xl flex flex-col justify-between shadow-md shadow-slate-200/50"
+                        >
+                            <div>
+                                <div className="w-10 h-10 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center mb-4 text-blue-600 group-hover:scale-110 transition-transform">
+                                    <Mail className="w-5 h-5" />
+                                </div>
+
+                                <h2 className="text-xl font-bold text-slate-900 mb-2 tracking-tight">
+                                    Email & LinkedIn
+                                </h2>
+
+                                <p className="text-slate-600 text-xs sm:text-sm font-light leading-relaxed mb-5">
+                                    Get in touch via email or connect on LinkedIn to discuss custom engineering projects and partnerships.
+                                </p>
+                            </div>
+
+                            <div className="flex flex-col gap-2">
+                                <a
+                                    href={`mailto:${SOCIAL_LINKS.email}`}
+                                    className="inline-flex items-center justify-center gap-2 px-5 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs rounded-xl uppercase tracking-wider transition-all duration-300 w-full shadow-sm shadow-blue-500/20"
+                                >
+                                    Get support <ArrowRight className="w-4 h-4" />
+                                </a>
+                                <a
+                                    href={SOCIAL_LINKS.linkedin}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center justify-center gap-2 px-4 py-2 border border-slate-200 hover:border-blue-400 text-slate-600 hover:text-blue-600 font-mono text-[11px] uppercase tracking-wider rounded-lg transition-colors text-center"
+                                >
+                                    LinkedIn Profile ↗
+                                </a>
+                            </div>
+                        </motion.div>
+
+                        {/* Card 3: WhatsApp Direct */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, delay: 0.3 }}
+                            className="group p-6 border border-slate-200 bg-white hover:border-blue-500 hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300 rounded-2xl flex flex-col justify-between shadow-md shadow-slate-200/50"
+                        >
+                            <div>
+                                <div className="w-10 h-10 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center mb-4 text-blue-600 group-hover:scale-110 transition-transform">
+                                    <MessageSquare className="w-5 h-5" />
+                                </div>
+
+                                <h2 className="text-xl font-bold text-slate-900 mb-2 tracking-tight">
+                                    WhatsApp Direct
+                                </h2>
+
+                                <p className="text-slate-600 text-xs sm:text-sm font-light leading-relaxed mb-5">
+                                    Skip the email forms and start a direct real-time conversation with Sandesh on WhatsApp.
+                                </p>
+                            </div>
+
                             <a
                                 href="https://wa.me/9303228082"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center justify-center gap-3 px-10 py-5 bg-[#25D366] text-white font-bold uppercase tracking-widest text-xs hover:bg-[#20ba5a] transition-all rounded-none border border-[#25D366]"
+                                className="inline-flex items-center justify-center gap-2 px-5 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs rounded-xl uppercase tracking-wider transition-all duration-300 w-full shadow-sm shadow-blue-500/20"
                             >
-                                WHATSAPP NOW ➲
+                                WhatsApp Now <ArrowRight className="w-4 h-4" />
+                            </a>
+                        </motion.div>
+
+                    </div>
+
+                    {/* Bottom 2-Column Section */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8 border-t border-slate-200">
+                        <div>
+                            <h3 className="text-xs font-bold text-slate-900 uppercase tracking-wider mb-2">Join us on GitHub</h3>
+                            <p className="text-slate-600 text-xs leading-relaxed mb-3 font-light">
+                                If you have technical questions or want to inspect open-source B2B lead engines and system architectures, view my official GitHub repositories.
+                            </p>
+                            <a
+                                href="https://github.com/29Sandesh"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-blue-600 hover:underline text-xs font-mono font-bold uppercase tracking-widest inline-flex items-center gap-2"
+                            >
+                                Explore GitHub repositories →
+                            </a>
+                        </div>
+
+                        <div>
+                            <h3 className="text-xs font-bold text-slate-900 uppercase tracking-wider mb-2">General communications</h3>
+                            <p className="text-slate-600 text-xs leading-relaxed mb-3 font-light">
+                                For general queries, including custom retainers, AI lead engines, and growth consultations, please contact direct support.
+                            </p>
+                            <a
+                                href={`mailto:${SOCIAL_LINKS.email}`}
+                                className="text-blue-600 hover:underline text-xs font-mono font-bold uppercase tracking-widest inline-flex items-center gap-2"
+                            >
+                                Contact support for help →
                             </a>
                         </div>
                     </div>
-                </div>
 
-                {/* Footer */}
-                <div className="border-t border-white/5 py-12 text-center">
-                    <p className="text-white/10 font-mono text-xs tracking-[0.5em] uppercase">
-                        Sandesh Agrawal — Frontend Developer — {new Date().getFullYear()}
-                    </p>
-                </div>
+                </main>
             </div>
+            <Footer />
         </div>
     );
 };

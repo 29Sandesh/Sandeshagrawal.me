@@ -1,0 +1,176 @@
+
+=========================================
+FILE: C:\Users\OMEN\Downloads\Resume (10).pdf
+=========================================
+
+--- Page 1 ---
+Sandesh Agrawal
+Full Stack Developer
+React·Next.js·Node.js·TypeScript·MongoDB·GraphQL
+/ne+91 93032 2808229sandesh.agrawal@gmail.comIndore, India
+/g♀besandeshagrawal.me/♀nednlinkedin.com/in/sandeshagrawal29/gtbgithub.com/29Sandesh
+Summary
+Full Stack Developer with hands-on experience building10+ production-ready SaaS platforms, AI-powered applications,
+and business software using React, Next.js, Node.js, TypeScript, and GraphQL. Experienced in designing scalable,
+high-performance web applications with a focus on clean architecture, performance, and user experience.
+Technical Skills
+Languages:JavaScript, TypeScript, Python, Java, HTML/CSS
+F rontend:React, Next.js, Tailwind CSS, Vite
+Backend:Node.js, Express.js, GraphQL, REST APIs
+Databases & Cloud:MongoDB, PostgreSQL (Supabase), A WS, Firebase
+Experience
+CODEHTML July 2025 – Present
+Full Stack Developer·Freelance·Remote
+–Developed and maintained10+ production web applicationsfor startup clients using React, Node.js, and MongoDB.
+–Built reusable white-label SaaS modules and shared components, accelerating development acrossmultiple client projects.
+–Collaborated directly with startup founders to design, develop, and deliver production-ready web applications.
+–BuiltF oodF ranchiseIndia.com, a multi-portal SaaS platform featuring CRM, franchise resale, and a programmatic SEO engine
+generating10,000+ landing pages.
+Axipays Jan 2025 – June 2025
+Full Stack Developer·Internship·On-site
+–Developedsecure REST APIsand integration documentation that enabled3+ third-party payment gatewaysto onboard and
+communicate with the platform throughAPI key authentication.
+–Builtinternal dashboardsforpayment orchestration, providingreal-time visibilityinto transactions and payment statuses.
+–Implementedtransaction routingandautomated retry workflowsto improve payment reliability acrossmultiple providers.
+–Worked with engineers to troubleshootAPI integrations, optimizepayment flows, and improve overallplatform reliability.
+Projects
+CodeLeads — B2B Lead Generation PlatformDemo
+React·TypeScript·Google ADK·Groq API·Firebase·MongoDB
+–Built a lead generation platform that automates local business discovery, lead qualification, and outreach using autonomous AI agents.
+–Developed AI agents withGoogle ADKandGroq APIto search businesses, filter qualified leads, and generate personalized emails.
+–IntegratedFirebaseandMongoDBfor authentication, lead management, user search history, and whitelist persistence.
+F oodF ranchiseIndia Platform Demo
+React·TypeScript·Node.js·MongoDB
+–Built a multi-portal franchise management SaaS with6 role-based portalsand secure role-based access control (RBAC).
+–Developed aprogrammatic SEO enginegenerating10,000+ dynamic landing pageswith integrated CRM and LMS modules.
+–Implemented franchise discovery, resale marketplace, commercial property listings, and financing workflows within a unified platform.
+The CirCle — Real-Time Enterprise Collaboration PlatformDemo
+React·Node.js·GraphQL·MongoDB·Redis·Kubernetes
+–Built a real-time collaboration platform usingGraphQL subscriptionsto enable synchronized messaging and collaboration.
+–Implemented secure authentication, (RBAC), audit logging, and multi-tenant architecture for enterprise-grade access management.
+–Developed collaborative Kanban boards with real-time synchronization and containerized deployment usingDocker&Kubernetes.
+Education
+B.T ech in Information T echnology 2022 – 2026
+IPS Academy, Indore, Madhya Pradesh
+Certifications
+AI Essentials Specialization —Coursera
+Full Stack Developer Certification —micro1
+
+
+=========================================
+FILE: C:\Users\OMEN\Downloads\Resume (9).pdf
+=========================================
+
+--- Page 1 ---
+Sandesh Agrawal
+Full Stack Developer
+React·Next.js·Node.js·TypeScript·MongoDB·GraphQL
+/ne+91 93032 2808229sandesh.agrawal@gmail.comIndore, India
+/g♀besandeshagrawal.me/♀nednlinkedin.com/in/sandeshagrawal29/gtbgithub.com/29Sandesh
+Summary
+Full Stack Developer with hands-on experience building production-ready SaaS platforms, AI-powered applications, and
+business software using React, Next.js, Node.js, TypeScript, and GraphQL. Experienced in designing scalable,
+high-performance applications with a focus on clean architecture and user experience.
+Technical Skills
+Languages:JavaScript, TypeScript, Python, Java, HTML/CSS
+F rontend:React, Next.js, Tailwind CSS, Vite
+Backend:Node.js, Express.js, GraphQL, REST APIs
+Databases & Cloud:MongoDB, PostgreSQL (Supabase), A WS, Firebase, Git
+Experience
+CODEHTML July 2025 – Present
+Full Stack Developer·Freelance·Remote
+–Developed and maintained multiple production web applications for startup clients using React, Node.js, and MongoDB.
+–Built reusable white-label SaaS features and shared components, reducing development effort across multiple client projects.
+–Collaborated directly with startup founders to translate business requirements into production-ready web applications.
+–BuiltF oodF ranchiseIndia.com, a multi-portal SaaS platform featuring CRM, franchise resale, and a programmatic SEO engine
+generating10,000+ landing pages.
+Axipays Jan 2025 – June 2025
+Full Stack Developer·Internship·On-site
+–Developed features for a payment orchestration platform, including smart transaction cloning and automated retry workflows to
+improve payment reliability.
+–Built internal dashboards for transaction monitoring, reporting, and real-time payment status tracking.
+–Integrated REST APIs and backend services to support secure end-to-end payment processing and workflow automation.
+–Debugged and optimized payment flows by identifying integration issues and collaborating with the engineering team to improve
+system reliability.
+Projects
+CodeLeads — B2B Lead Generation PlatformDemo
+React·TypeScript·Google ADK·Groq API·Firebase·MongoDB
+–Built a lead generation platform that automates local business discovery, lead qualification, and outreach using autonomous AI agents.
+–Developed AI agents withGoogle ADKandGroq APIto search businesses, filter qualified leads, and generate personalized emails.
+–IntegratedFirebaseandMongoDBfor authentication, lead management, user search history, and whitelist persistence.
+F oodF ranchiseIndia Platform Demo
+React·TypeScript·Node.js·MongoDB
+–Built a multi-portal franchise management SaaS with6 role-based portalsand secure role-based access control (RBAC).
+–Developed aprogrammatic SEO enginegenerating10,000+ dynamic landing pageswith integrated CRM and LMS modules.
+–Implemented franchise discovery, resale marketplace, commercial property listings, and financing workflows within a unified platform.
+The CirCle — Real-Time Enterprise Collaboration PlatformDemo
+React·Node.js·GraphQL·MongoDB·Redis·Kubernetes
+–Built a real-time collaboration platform usingGraphQL subscriptionsto enable synchronized messaging and collaboration.
+–Implemented secure authentication, (RBAC), audit logging, and multi-tenant architecture for enterprise-grade access management.
+–Developed collaborative Kanban boards with real-time synchronization and containerized deployment usingDocker&Kubernetes.
+Education
+B.T ech in Information T echnology 2022 – 2026
+IPS Academy, Indore, Madhya Pradesh
+Certifications
+AI Essentials Specialization —Coursera
+Full Stack Developer Certification —micro1
+
+
+=========================================
+FILE: C:\Users\OMEN\Downloads\Resume (8).pdf
+=========================================
+
+--- Page 1 ---
+Sandesh Agrawal
+Full Stack Developer
+React·Next.js·Node.js·TypeScript·MongoDB·GraphQL
+/ne+91 93032 2808229sandesh.agrawal@gmail.comIndore, India
+/g♀besandeshagrawal.me/♀nednlinkedin.com/in/sandeshagrawal29/gtbgithub.com/29Sandesh
+Summary
+Full Stack Developer with hands-on experience building production-ready SaaS platforms, AI-powered applications, and
+business software using React, Next.js, Node.js, TypeScript, and GraphQL. Passionate about building scalable,
+high-performance products with clean architecture and intuitive user experiences.
+Technical Skills
+Languages:JavaScript, TypeScript, Python, Java, HTML/CSS
+F rontend:React, Next.js, Tailwind CSS, Vite
+Backend:Node.js, Express.js, GraphQL, REST APIs
+Databases & Cloud:MongoDB, PostgreSQL (Supabase), A WS, Firebase, Git
+Experience
+CODEHTML July 2025 – Present
+Full Stack Developer·Freelance·Remote
+–Developed and maintained multiple production web applications for startup clients using React, Node.js, and MongoDB.
+–Built reusable white-label SaaS features and shared components, reducing development effort across multiple client projects.
+–Collaborated directly with startup founders to translate business requirements into production-ready web applications.
+–BuiltF oodF ranchiseIndia.com, a multi-portal SaaS platform featuring CRM, franchise resale, and a programmatic SEO engine
+generating10,000+ landing pages.
+Axipays Jan 2025 – June 2025
+Full Stack Developer·Internship·On-site
+–Developed features for a payment orchestration platform, including smart transaction cloning and automated retry workflows to
+improve payment reliability.
+–Built internal dashboards for transaction monitoring, reporting, and real-time payment status tracking.
+–Integrated REST APIs and backend services to support secure end-to-end payment processing and workflow automation.
+–Debugged and optimized payment flows by identifying integration issues and collaborating with the engineering team to improve
+system reliability.
+Projects
+CodeLeads — B2B Lead Generation Platform Link
+React·TypeScript·Google ADK·Groq API·Firebase·MongoDB
+–Built a lead generation platform that automates local business discovery, lead qualification, and outreach using autonomous AI agents.
+–Developed AI agents withGoogle ADKandGroq APIto search businesses, filter qualified leads, and generate personalized emails.
+–IntegratedFirebaseandMongoDBfor authentication, lead management, user search history, and whitelist persistence.
+F oodF ranchiseIndia Platform Link
+React·TypeScript·Node.js·MongoDB·Prisma
+–Built a multi-portal franchise management SaaS with6 role-based portalsand secure role-based access control (RBAC).
+–Developed aprogrammatic SEO enginegenerating10,000+ dynamic landing pageswith integrated CRM and LMS modules.
+–Implemented franchise discovery, resale marketplace, commercial property listings, and financing workflows within a unified platform.
+The CirCle — Real-Time Enterprise Collaboration PlatformLink
+React 19·Node.js·GraphQL·MongoDB·Redis·Kubernetes
+–Real-time collaboration platform withGraphQL subscriptions, Allowing synchronized messaging, Alerts and collaborative space.
+–Implemented secure authentication, (RBAC), audit logging, and multi-tenant architecture for enterprise-grade access management.
+–Developed collaborative Kanban boards with real-time synchronization and containerized deployment usingDocker&Kubernetes.
+Education
+B.T ech in Information T echnology 2022 – 2026
+IPS Academy, Indore, Madhya Pradesh
+Certifications
+AI Essentials Specialization —Coursera
+Full Stack Developer Certification —micro1
+

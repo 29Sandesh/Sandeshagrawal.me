@@ -4,13 +4,36 @@ import { motion } from 'framer-motion';
 import { PROJECTS } from '../constants';
 import { ArrowLeft, ExternalLink, Github, ArrowRight, Share2, Calendar, Target, Globe } from 'lucide-react';
 import Navbar from './Navbar';
+import SEOHead from './SEOHead';
+import NotFoundPage from './NotFoundPage';
 
 const ProjectDetail: React.FC<{ slug: string }> = ({ slug }) => {
-    // Find project by slug (mapping title to-kebab-case if needed)
-    const project = PROJECTS.find(p => p.title.toLowerCase().replace(/\s+/g, '-') === slug) || PROJECTS[0];
+    // Find project by ID or title slug
+    const project = PROJECTS.find(p => p.id === slug || p.title.toLowerCase().replace(/[\s\(\)]+/g, '-').replace(/-+$/, '') === slug);
+
+    if (!project) {
+        return <NotFoundPage />;
+    }
 
     return (
         <div className="min-h-screen bg-black text-white">
+            <SEOHead
+                title={`${project.title} - Project Case Study`}
+                description={project.description}
+                keywords={`${project.tech.join(', ')}, ${project.title}, Sandesh Agrawal Case Study`}
+                ogImage={project.imageUrl}
+                jsonLd={{
+                    "@context": "https://schema.org",
+                    "@type": "CreativeWork",
+                    "name": project.title,
+                    "description": project.description,
+                    "image": project.imageUrl,
+                    "author": {
+                        "@type": "Person",
+                        "name": "Sandesh Agrawal"
+                    }
+                }}
+            />
             {/* Background elements */}
             <div className="fixed inset-0 opacity-[0.015] pointer-events-none z-0"
                 style={{ backgroundImage: 'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)', backgroundSize: '40px 40px' }} />

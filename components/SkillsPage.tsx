@@ -3,9 +3,14 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Skills from './Skills';
 import Navbar from './Navbar';
+import SEOHead from './SEOHead';
 
 const SkillsPage: React.FC = () => (
     <div className="min-h-screen bg-black text-white">
+        <SEOHead
+            title="GTM Tech Stack & Growth Engineering Skills"
+            description="Detailed breakdown of Sandesh Agrawal's tech stack: lead generation, AI agents, outbound automation, programmatic SEO, React, Node.js, and AWS."
+        />
         <div
             className="fixed inset-0 opacity-[0.015] pointer-events-none z-0"
             style={{
@@ -25,7 +30,7 @@ const SkillsPage: React.FC = () => (
             </motion.div>
             <footer className="border-t border-white/5 py-12 text-center">
                 <p className="text-white/10 font-mono text-xs tracking-[0.5em] uppercase">
-                    Sandesh Agrawal — Frontend Developer — {new Date().getFullYear()}
+                    Sandesh Agrawal — Technical GTM Engineer — {new Date().getFullYear()}
                 </p>
             </footer>
         </div>

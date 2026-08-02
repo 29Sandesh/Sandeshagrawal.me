@@ -1,18 +1,18 @@
 @import "tailwindcss";
 
 :root {
-  --vintage-bg: #000000;
-  --vintage-surface: #09090b;
-  --vintage-text: #ffffff;
-  --vintage-muted: #a1a1aa;
-  --vintage-accent-1: #9b1c1c; /* Vintage Red */
-  --vintage-accent-2: #9b1c1c; /* Red Selection */
-  --vintage-border: #27272a;
+  --vintage-bg: #ffffff;
+  --vintage-surface: #f8fafc;
+  --vintage-text: #0f172a;
+  --vintage-muted: #64748b;
+  --vintage-accent-1: #2563eb; /* Royal Blue */
+  --vintage-accent-2: #3b82f6; /* Bright Blue */
+  --vintage-border: #e2e8f0;
 }
 
 @layer base {
   body {
-    @apply antialiased overflow-x-hidden bg-black text-white overscroll-none;
+    @apply antialiased overflow-x-hidden bg-slate-50 text-slate-900 overscroll-none;
     font-family: 'Source Sans 3', sans-serif;
   }
 
@@ -22,39 +22,40 @@
     top: 0; left: 0; width: 100vw; height: 100vh;
     pointer-events: none;
     z-index: 9999;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.015'/%3E%3C/svg%3E");
     will-change: transform;
     transform: translateZ(0);
   }
 
   ::selection {
-    background-color: var(--vintage-accent-1);
-    color: #000000;
+    background-color: #2563eb;
+    color: #ffffff;
   }
 
-  /* Custom Brutalist Scrollbar */
+  /* Custom Clean Blue Scrollbar */
   ::-webkit-scrollbar {
     width: 6px;
   }
   ::-webkit-scrollbar-track {
-    background: #000000;
-    border-left: 1px solid #1a1a1a;
+    background: #f1f5f9;
+    border-left: 1px solid #e2e8f0;
   }
   ::-webkit-scrollbar-thumb {
-    background: var(--vintage-accent-1);
+    background: #2563eb;
+    border-radius: 3px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #ffffff;
+    background: #1d4ed8;
   }
 
   /* High-Contrast Focus Rings */
   *:focus-visible {
-    outline: 2px solid #c05621 !important;
+    outline: 2px solid #2563eb !important;
     outline-offset: 2px !important;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-bold tracking-tight text-white;
+    @apply font-bold tracking-tight text-slate-900;
     font-family: 'Playfair Display', serif;
   }
 }
@@ -65,45 +66,25 @@
     background-color: var(--vintage-surface);
   }
 
-  /* No shadows, just sharp solid borders */
-  .neo-shadow {
-    box-shadow: none;
-    border: 2px solid var(--vintage-border);
-    border-radius: 0;
-  }
-
-  .neo-shadow-large {
-    box-shadow: 4px 4px 0px 0px var(--vintage-accent-1);
-    border: 2px solid var(--vintage-border);
-    border-radius: 0;
-  }
-
-  .btn-interact {
-    @apply transition-all duration-200 border-2 border-white;
-    border-radius: 0 !important;
-  }
-
-  .btn-interact:hover {
-    @apply bg-white text-black;
-  }
-
-  .text-outline {
-    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.8);
+  .text-stroke-dark {
+    -webkit-text-stroke: 1.5px #0f172a;
     color: transparent;
   }
 
-  @media (max-width: 767px) {
-    .mobile-text-solid {
-      -webkit-text-stroke: 0 !important;
-      color: var(--vintage-text) !important;
-      opacity: 1 !important;
-    }
+  .text-accent {
+    color: #2563eb;
   }
 
-  /* Extreme rendering performance optimization */
-  .content-visibility-auto {
-    content-visibility: auto;
-    contain-intrinsic-size: 1px 1000px; /* Placeholder size for layout stability */
+  .bg-accent {
+    background-color: #2563eb;
+  }
+
+  .border-accent {
+    border-color: #2563eb;
+  }
+
+  .btn-premium {
+    @apply bg-blue-600 hover:bg-blue-700 text-white font-semibold shadow-lg shadow-blue-500/20 transition-all duration-300;
   }
 }
 

@@ -2,7 +2,7 @@
 import { Project, SkillData, Experience, GalleryImage, Certification } from './types';
 
 export const HERO_TITLE = "Sandesh Agrawal";
-export const HERO_SUBTITLE = "Full Stack Developer with hands-on experience building 10+ production-ready SaaS platforms, AI-powered applications, and enterprise software using React, Next.js, Node.js, TypeScript, and GraphQL.";
+export const HERO_SUBTITLE = "Technical GTM Engineer with hands-on experience building lead generation platforms, AI-powered outbound automation systems, and growth infrastructure using React, Node.js, TypeScript, and AI agents.";
 
 
 export const SOCIAL_LINKS = {
@@ -12,26 +12,33 @@ export const SOCIAL_LINKS = {
 };
 
 export const MARQUEE_ITEMS = [
-  "Full-Stack Web",
-  "Native Android",
-  "Advanced Automation",
-  "Cloud Scaling",
-  "App Engineering",
-  "Scalable Systems"
+  "Clay",
+  "HubSpot",
+  "Apollo",
+  "Instantly",
+  "n8n",
+  "Waterfall Enrichment",
+  "LLM AI Agents",
+  "React 19",
+  "Next.js",
+  "Node.js",
+  "TypeScript",
+  "Supabase",
+  "AWS"
 ];
 
 export const SKILL_DETAILS = {
-  Frontend: ['React', 'Next.js', 'Tailwind CSS', 'Vite', 'HTML/CSS', 'JavaScript', 'TypeScript'],
-  Backend: ['Node.js', 'Express.js', 'GraphQL', 'REST APIs', 'Python', 'Java'],
-  Databases: ['MongoDB', 'PostgreSQL (Supabase)', 'Firebase'],
-  'Tools & Tech': ['AWS', 'Git', 'GitHub']
+  'GTM & RevOps Tools': ['Clay', 'HubSpot', 'Salesforce', 'Outreach', 'Apollo', 'Instantly', 'n8n', 'Zapier'],
+  'Data & AI Automation': ['Waterfall Enrichment', 'LLM APIs (OpenAI/Claude/Gemini)', 'ZoomInfo', 'Clearbit', 'Hunter.io', 'LangChain'],
+  'Full-Stack Engineering': ['React', 'Next.js', 'Node.js', 'TypeScript', 'Express.js', 'GraphQL', 'Tailwind CSS', 'Vite'],
+  'Databases & Integration': ['MongoDB', 'PostgreSQL (Supabase)', 'AWS', 'Firebase', 'REST APIs', 'Webhooks', 'CRM Object Modeling', 'SQL']
 };
 
 export const SKILLS_DATA: SkillData[] = [
-  { subject: 'Frontend', A: 95, fullMark: 100 },
-  { subject: 'Backend', A: 85, fullMark: 100 },
-  { subject: 'Databases', A: 80, fullMark: 100 },
-  { subject: 'Tools & Tech', A: 90, fullMark: 100 },
+  { subject: 'GTM & RevOps Tools', A: 95, fullMark: 100 },
+  { subject: 'Data & AI Automation', A: 95, fullMark: 100 },
+  { subject: 'Full-Stack Engineering', A: 95, fullMark: 100 },
+  { subject: 'Databases & Integration', A: 90, fullMark: 100 },
 ];
 
 export const PROJECTS: Project[] = [
@@ -214,15 +221,15 @@ export const PROJECTS: Project[] = [
 export const EXPERIENCE: Experience[] = [
   {
     id: 'exp-1',
-    role: 'Full Stack Developer',
+    role: 'Technical GTM Engineer',
     company: 'CODEHTML',
     type: 'Freelance · Remote',
     period: 'July 2025 - Present',
-    description: 'Full Stack Developer at CODEHTML.',
+    description: 'Technical GTM Engineer at CODEHTML.',
     points: [
-      'Developed and maintained 10+ production web applications for startup clients using React, Node.js, and MongoDB.',
-      'Built reusable white-label SaaS modules and shared components, accelerating development across multiple client projects.',
-      'Collaborated directly with startup founders to design, develop, and deliver production-ready web applications.',
+      'Developed and maintained 10+ production web applications and growth platforms for startup clients using React, Node.js, and MongoDB.',
+      'Built reusable white-label SaaS modules and automated lead generation engines, accelerating client go-to-market execution.',
+      'Collaborated directly with startup founders to design, develop, and deploy production-ready GTM systems.',
       'Built FoodFranchiseIndia.com, a multi-portal SaaS platform featuring CRM, franchise resale, and a programmatic SEO engine generating 10,000+ landing pages.'
     ]
   },
@@ -283,20 +290,22 @@ export const GALLERY_IMAGES: GalleryImage[] = [
 
 export const UI_ASSISTANT_INSTRUCTION = `
 You are "A.L.E.X.", the Smart Interface Assistant for Sandesh Agrawal's portfolio website.
-Sandesh is a Full Stack Developer based in Indore, India.
+Sandesh is a Technical GTM Engineer based in Indore, India.
 
 Educational Background:
 - IPS Academy, Indore: B.Tech in Information Technology (2022-2026), CGPA: 7.2.
 
+Core Identity & Pillars:
+- Role: Technical GTM Engineer | Full-Stack Developer
+- Pillars: Lead Generation, Outbound Automation, AI Agents, Growth Infrastructure.
+
 Professional Tech Stack:
-- Languages: JavaScript, TypeScript, Python, Java, HTML/CSS.
-- Frontend: React 19, Next.js, Tailwind CSS, Vite, Framer Motion, Zustand.
-- Backend: Node.js, Express.js, REST APIs, GraphQL, Socket.io, JWT Authentication, Sharp, Bcrypt.
-- Databases & Cloud: MongoDB, PostgreSQL (Supabase), Redis, SQLite, Mongoose, AWS, Firebase, Docker, Kubernetes.
+- GTM & AI: Lead Gen Systems, Outbound Automation, AI Agents (ADK / Groq API), Programmatic SEO, CRM Integration.
+- Full-Stack: React 19, Next.js, Node.js, Express.js, TypeScript, MongoDB, PostgreSQL, Python, REST APIs, GraphQL, AWS.
 
 Professional Experience:
-- CODEHTML (July 2025 - Present): Full Stack Developer (Freelance · Remote). Developed and maintained 10+ production web applications for startup clients using React, Node.js, and MongoDB. Built FoodFranchiseIndia.com, a multi-portal SaaS platform.
-- Axipays (Jan 2025 - June 2025): Full Stack Developer (Internship · On-site). Developed secure REST APIs and integration documentation that enabled 3+ third-party payment gateways, transaction routing, and automated retries.
+- CODEHTML (July 2025 - Present): Technical GTM Engineer (Freelance · Remote). Built 10+ production growth platforms, white-label SaaS modules, and FoodFranchiseIndia.com multi-portal SaaS with programmatic SEO engine.
+- Axipays (Jan 2025 - June 2025): Full Stack Developer (Internship · On-site). Developed secure REST APIs and integration documentation enabling 3+ third-party payment gateways.
 
 Key Projects:
 - CodeLeads — B2B Lead Generation Platform: Autonomous AI lead generation system using Google ADK and Groq API.
@@ -309,5 +318,5 @@ Certifications:
 - AI Essentials Specialization — Coursera
 - Full Stack Developer Certification — micro1
 
-Keep responses technical yet approachable. Emphasize his ability with MERN/Full Stack, AI integration, performance optimization, and SEO.
+Keep responses technical yet growth-focused. Emphasize his expertise in GTM engineering, AI agents, lead generation systems, full-stack dev, and programmatic SEO.
 `;

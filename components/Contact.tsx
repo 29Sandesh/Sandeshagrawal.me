@@ -1,55 +1,166 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+import { Mail, Linkedin, MessageSquare, ArrowRight, Building2 } from 'lucide-react';
 import { SOCIAL_LINKS } from '../constants';
 
 const Contact: React.FC = () => {
     return (
-        <section id="contact" className="pt-8 pb-14 md:pt-10 md:pb-20 relative overflow-hidden bg-black">
-            <div className="absolute inset-0 opacity-[0.015] pointer-events-none"
-                style={{ backgroundImage: 'radial-gradient(circle, #ffffff 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
+        <section id="contact" className="py-12 md:py-16 relative overflow-hidden bg-slate-50 text-slate-900 border-b border-slate-200 font-sans">
+            <div className="max-w-7xl mx-auto px-6 relative z-10">
+                {/* Header */}
+                <motion.div
+                    className="mb-8 text-left"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5 }}
+                >
+                    <h2 className="text-3xl sm:text-5xl font-bold font-syncopate uppercase tracking-tight leading-none text-slate-900 mb-2">
+                        Contact us
+                    </h2>
+                    <p className="text-base sm:text-lg text-slate-600 font-light max-w-xl leading-relaxed">
+                        Get in touch and let us know how we can help.
+                    </p>
+                </motion.div>
 
-            <motion.div
-                className="max-w-7xl mx-auto px-6 text-center"
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
-            >
-                <p className="text-white/30 font-mono text-[11px] tracking-[0.4em] uppercase mb-5">Available for work</p>
+                {/* 3-Card Grid Section */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
 
-                <h2 className="text-4xl md:text-[6.5vw] font-bold text-white mb-6 font-syncopate tracking-tighter uppercase leading-none">
-                    GET IN<br />
-                    <span className="text-transparent stroke-text">TOUCH.</span>
-                </h2>
-
-                <p className="text-white/40 font-light text-base md:text-lg mb-8 max-w-md mx-auto leading-relaxed">
-                    Have a project in mind or just want to connect? Let's talk.
-                </p>
-
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <a
-                        href="https://api.whatsapp.com/send/?phone=9303228082&text&type=phone_number&app_absent=0"
-                        className="group flex items-center gap-3 px-7 py-3.5 bg-[#25D366] text-white font-bold uppercase tracking-widest text-[11px] hover:bg-[#20ba5a] transition-all"
+                    {/* Card 1: Outbound & GTM */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: 0.1 }}
+                        className="group p-6 border border-slate-200 bg-white hover:border-blue-500 hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300 rounded-2xl flex flex-col justify-between shadow-md shadow-slate-200/50"
                     >
-                        <svg
-                            viewBox="0 0 24 24"
-                            className="w-5 h-5 fill-white"
-                            xmlns="http://www.w3.org/2000/svg"
+                        <div>
+                            <div className="w-10 h-10 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center mb-4 text-blue-600 group-hover:scale-110 transition-transform">
+                                <Building2 className="w-5 h-5" />
+                            </div>
+
+                            <h3 className="text-xl font-bold text-slate-900 mb-2 tracking-tight">
+                                Outbound & GTM
+                            </h3>
+
+                            <p className="text-slate-600 text-xs sm:text-sm font-light leading-relaxed mb-5">
+                                I'd love to talk about how we can work together on your outbound automation and growth infrastructure.
+                            </p>
+                        </div>
+
+                        <a
+                            href={`mailto:${SOCIAL_LINKS.email}?subject=Project Inquiry - GTM Outbound Engine`}
+                            className="inline-flex items-center justify-center gap-2 px-5 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs rounded-xl uppercase tracking-wider transition-all duration-300 w-full shadow-sm shadow-blue-500/20"
                         >
-                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-                        </svg>
-                        <span>Chat on WhatsApp</span>
-                    </a>
-                    <a
-                        href={`mailto:${SOCIAL_LINKS.email}`}
-                        className="text-white/40 hover:text-white font-mono text-[11px] uppercase tracking-[0.2em] transition-colors border-b border-white/10 pb-1 hover:border-white/40"
+                            Contact me <ArrowRight className="w-4 h-4" />
+                        </a>
+                    </motion.div>
+
+                    {/* Card 2: Email & Support */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: 0.2 }}
+                        className="group p-6 border border-slate-200 bg-white hover:border-blue-500 hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300 rounded-2xl flex flex-col justify-between shadow-md shadow-slate-200/50"
                     >
-                        {SOCIAL_LINKS.email}
-                    </a>
+                        <div>
+                            <div className="w-10 h-10 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center mb-4 text-blue-600 group-hover:scale-110 transition-transform">
+                                <Mail className="w-5 h-5" />
+                            </div>
+
+                            <h3 className="text-xl font-bold text-slate-900 mb-2 tracking-tight">
+                                Email & LinkedIn
+                            </h3>
+
+                            <p className="text-slate-600 text-xs sm:text-sm font-light leading-relaxed mb-5">
+                                Get in touch via email or connect on LinkedIn to discuss custom engineering projects and partnerships.
+                            </p>
+                        </div>
+
+                        <div className="flex flex-col gap-2">
+                            <a
+                                href={`mailto:${SOCIAL_LINKS.email}`}
+                                className="inline-flex items-center justify-center gap-2 px-5 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs rounded-xl uppercase tracking-wider transition-all duration-300 w-full shadow-sm shadow-blue-500/20"
+                            >
+                                Get support <ArrowRight className="w-4 h-4" />
+                            </a>
+                            <a
+                                href={SOCIAL_LINKS.linkedin}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center justify-center gap-2 px-4 py-2 border border-slate-200 hover:border-blue-400 text-slate-600 hover:text-blue-600 font-mono text-[11px] uppercase tracking-wider rounded-lg transition-colors text-center"
+                            >
+                                LinkedIn Profile ↗
+                            </a>
+                        </div>
+                    </motion.div>
+
+                    {/* Card 3: WhatsApp Direct */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: 0.3 }}
+                        className="group p-6 border border-slate-200 bg-white hover:border-blue-500 hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300 rounded-2xl flex flex-col justify-between shadow-md shadow-slate-200/50"
+                    >
+                        <div>
+                            <div className="w-10 h-10 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center mb-4 text-blue-600 group-hover:scale-110 transition-transform">
+                                <MessageSquare className="w-5 h-5" />
+                            </div>
+
+                            <h3 className="text-xl font-bold text-slate-900 mb-2 tracking-tight">
+                                WhatsApp Direct
+                            </h3>
+
+                            <p className="text-slate-600 text-xs sm:text-sm font-light leading-relaxed mb-5">
+                                Skip the email forms and start a direct real-time conversation with Sandesh on WhatsApp.
+                            </p>
+                        </div>
+
+                        <a
+                            href="https://wa.me/9303228082"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center justify-center gap-2 px-5 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs rounded-xl uppercase tracking-wider transition-all duration-300 w-full shadow-sm shadow-blue-500/20"
+                        >
+                            WhatsApp Now <ArrowRight className="w-4 h-4" />
+                        </a>
+                    </motion.div>
+
                 </div>
-            </motion.div>
+
+                {/* Bottom 2-Column Section */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8 border-t border-slate-200">
+                    <div>
+                        <h4 className="text-xs font-bold text-slate-900 uppercase tracking-wider mb-2">Join us on GitHub</h4>
+                        <p className="text-slate-600 text-xs leading-relaxed mb-3 font-light">
+                            If you have technical questions or want to inspect open-source B2B lead engines and system architectures, visit my official GitHub repositories.
+                        </p>
+                        <a
+                            href="https://github.com/29Sandesh"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-600 hover:underline text-xs font-mono font-bold uppercase tracking-widest inline-flex items-center gap-2"
+                        >
+                            Explore GitHub repositories →
+                        </a>
+                    </div>
+
+                    <div>
+                        <h4 className="text-xs font-bold text-slate-900 uppercase tracking-wider mb-2">General communications</h4>
+                        <p className="text-slate-600 text-xs leading-relaxed mb-3 font-light">
+                            For general queries, including custom retainers, AI lead engines, and growth consultations, please contact direct support.
+                        </p>
+                        <a
+                            href={`mailto:${SOCIAL_LINKS.email}`}
+                            className="text-blue-600 hover:underline text-xs font-mono font-bold uppercase tracking-widest inline-flex items-center gap-2"
+                        >
+                            Contact support for help →
+                        </a>
+                    </div>
+                </div>
+            </div>
         </section>
     );
 };

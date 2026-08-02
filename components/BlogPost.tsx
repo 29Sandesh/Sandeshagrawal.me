@@ -2,7 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { motion, useScroll, useSpring } from 'framer-motion';
 import { ArrowLeft, Clock, Calendar, Tag, Share2, Twitter, Linkedin, Copy } from 'lucide-react';
 import Navbar from './Navbar';
+import Footer from './Footer';
 import { BLOG_POSTS } from '../blogData';
+import SEOHead from './SEOHead';
 
 const BlogPost: React.FC = () => {
     const path = window.location.pathname;
@@ -41,23 +43,43 @@ const BlogPost: React.FC = () => {
     }
 
     return (
-        <div className="min-h-screen bg-[#000000] text-slate-200 font-sans selection:bg-accent/40 selection:text-white pb-32">
+        <div className="min-h-screen bg-white text-slate-900 font-sans selection:bg-blue-600 selection:text-white pb-32">
+            <SEOHead
+                title={post.title}
+                description={post.excerpt}
+                ogImage={post.image}
+                ogType="article"
+                publishedTime={post.date}
+                jsonLd={{
+                    "@context": "https://schema.org",
+                    "@type": "BlogPosting",
+                    "headline": post.title,
+                    "description": post.excerpt,
+                    "image": post.image,
+                    "datePublished": post.date,
+                    "author": {
+                        "@type": "Person",
+                        "name": "Sandesh Agrawal",
+                        "url": "https://sandeshagrawal.me"
+                    }
+                }}
+            />
 
-            {/* Cinematic Progress Bar */}
+            {/* Progress Bar */}
             <motion.div
-                className="fixed top-0 left-0 right-0 h-1.5 bg-accent origin-left z-[9999] shadow-[0_0_20px_rgba(139,92,246,0.8)]"
+                className="fixed top-0 left-0 right-0 h-1.5 bg-blue-600 origin-left z-[9999] shadow-md shadow-blue-500/30"
                 style={{ scaleX }}
             />
 
-            {/* HIGHLY VISIBLE BACK BUTTON - Fixed to top left outside of flow */}
+            {/* HIGHLY VISIBLE BACK BUTTON */}
             <a
                 href="/blog"
-                className="fixed top-24 left-4 md:left-8 z-[100] group flex items-center gap-3 px-4 py-3 glass-panel rounded-full bg-black/50 hover:bg-white/10 border border-white/10 hover:border-white/30 transition-all duration-300 shadow-[0_4px_30px_rgba(0,0,0,0.5)] backdrop-blur-3xl hover:shadow-[0_0_30px_rgba(139,92,246,0.3)]"
+                className="fixed top-24 left-4 md:left-8 z-[100] group flex items-center gap-3 px-4 py-3 rounded-full bg-white/90 hover:bg-white border border-slate-200 hover:border-blue-400 transition-all duration-300 shadow-md backdrop-blur-xl"
             >
-                <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-accent group-hover:text-black transition-colors">
-                    <ArrowLeft className="w-4 h-4" />
+                <div className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                    <ArrowLeft className="w-4 h-4 text-slate-700 group-hover:text-white" />
                 </div>
-                <span className="font-mono text-[10px] md:text-xs uppercase tracking-[0.2em] font-bold text-white pr-2">
+                <span className="font-mono text-[10px] md:text-xs uppercase tracking-widest font-bold text-slate-700 pr-2">
                     Back to Blog
                 </span>
             </a>
@@ -114,9 +136,9 @@ const BlogPost: React.FC = () => {
                                     SA
                                 </div>
                                 <h4 className="font-headline font-black text-sm uppercase tracking-wider text-white mb-1">Sandesh Agrawal</h4>
-                                <p className="font-body text-[9px] uppercase tracking-[0.2em] text-zinc-500 mb-4 font-bold">Lead Web Engineer</p>
-                                <a href="/contact" className="inline-block px-6 py-3 border border-zinc-800 text-[10px] font-body font-bold uppercase tracking-[0.2em] hover:bg-white hover:text-black hover:border-white transition-all rounded-none w-full lg:w-auto text-center text-white">
-                                    Hire Me
+                                <p className="font-body text-[9px] uppercase tracking-[0.2em] text-blue-400 mb-4 font-bold">Technical GTM Engineer</p>
+                                <a href="https://wa.me/9303228082" target="_blank" rel="noopener noreferrer" className="inline-block px-6 py-3 border border-blue-600 bg-blue-600 text-[10px] font-body font-bold uppercase tracking-[0.2em] hover:bg-blue-500 transition-all rounded-lg w-full text-center text-white shadow-md">
+                                    Book Strategy Call
                                 </a>
                             </div>
 
@@ -149,29 +171,53 @@ const BlogPost: React.FC = () => {
                         className="flex-1 max-w-3xl"
                     >
                         {/* Enlarged Pull Quote / Excerpt */}
-                        <div className="relative mb-16 before:content-[''] before:absolute before:-left-6 lg:before:-left-12 before:top-0 before:h-full before:w-1 before:bg-accent before:shadow-[0_0_20px_rgba(139,92,246,0.8)]">
-                            <p className="text-2xl md:text-3xl text-white/90 font-light leading-[1.6] italic">
+                        <div className="relative mb-16 before:content-[''] before:absolute before:-left-6 lg:before:-left-12 before:top-0 before:h-full before:w-1 before:bg-blue-600 before:shadow-[0_0_20px_rgba(37,99,235,0.8)]">
+                            <p className="text-2xl md:text-3xl text-slate-800 font-light leading-[1.6] italic">
                                 "{post.excerpt}"
                             </p>
                         </div>
 
                         {/* Premium Blog Content Rendering */}
                         <div
-                            dangerouslySetInnerHTML={{ __html: post.content }}
+                            dangerouslySetInnerHTML={{
+                                __html: typeof post.content === 'string'
+                                    ? post.content.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
+                                    : ''
+                            }}
                             className="
-                                prose prose-invert max-w-none
-                                prose-p:text-white/60 prose-p:font-light prose-p:leading-[1.9] prose-p:text-lg md:prose-p:text-xl prose-p:mb-8
-                                prose-headings:font-syncopate prose-headings:uppercase prose-headings:tracking-widest prose-headings:text-white/90 prose-headings:font-bold
-                                prose-h3:text-3xl prose-h3:mt-20 prose-h3:mb-8 prose-h3:pb-4 prose-h3:border-b prose-h3:border-white/10
-                                prose-a:text-accent prose-a:no-underline hover:prose-a:underline hover:prose-a:text-white transition-colors duration-300
-                                prose-strong:text-white prose-strong:font-bold
-                                prose-code:text-accent prose-code:bg-white/5 prose-code:px-2 prose-code:py-1 prose-code:rounded-md prose-code:font-mono prose-code:text-sm prose-code:border prose-code:border-white/10
-                                first-letter:float-left first-letter:text-7xl first-letter:font-syncopate first-letter:font-bold first-letter:text-accent first-letter:mr-4 first-letter:mt-[-0.1em] first-letter:line-height-[1]
+                                prose max-w-none
+                                prose-p:text-slate-700 prose-p:font-light prose-p:leading-[1.9] prose-p:text-lg md:prose-p:text-xl prose-p:mb-8
+                                prose-headings:font-headline prose-headings:uppercase prose-headings:tracking-wider prose-headings:text-slate-900 prose-headings:font-bold
+                                prose-h3:text-2xl prose-h3:mt-16 prose-h3:mb-6 prose-h3:pb-3 prose-h3:border-b prose-h3:border-slate-200
+                                prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline hover:prose-a:text-blue-700 transition-colors duration-300
+                                prose-strong:text-slate-900 prose-strong:font-bold
+                                prose-code:text-blue-600 prose-code:bg-blue-50 prose-code:px-2 prose-code:py-1 prose-code:rounded-md prose-code:font-mono prose-code:text-sm prose-code:border prose-code:border-blue-100
                             "
                         />
+
+                        {/* End of Post Strategy Call CTA */}
+                        <div className="mt-16 p-8 bg-slate-900 text-white rounded-2xl border border-slate-800 text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-6">
+                            <div>
+                                <h4 className="text-xl font-headline font-bold uppercase tracking-tight text-white mb-2">
+                                    Want to build this GTM engine for your company?
+                                </h4>
+                                <p className="text-slate-400 text-xs sm:text-sm font-light">
+                                    I help B2B startups and exporters build automated lead engines, AI agents, and RevOps infrastructure.
+                                </p>
+                            </div>
+                            <a
+                                href="https://wa.me/9303228082"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="px-6 py-3.5 bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs uppercase tracking-wider rounded-xl transition-all shadow-md shadow-blue-500/20 shrink-0"
+                            >
+                                Discuss on WhatsApp ➲
+                            </a>
+                        </div>
                     </motion.article>
                 </div>
             </main>
+            <Footer />
         </div>
     );
 };

@@ -17,6 +17,8 @@ const Navbar: React.FC<{ alwaysVisible?: boolean }> = () => {
 
   const navLinks = [
     { name: 'Home', href: '/' },
+    { name: 'Case Studies', href: '/case-studies' },
+    { name: 'Services', href: '/services' },
     { name: 'Projects', href: '/projects' },
     { name: 'Blog', href: '/blog' },
     { name: 'Contact', href: '/contact' },
@@ -34,8 +36,8 @@ const Navbar: React.FC<{ alwaysVisible?: boolean }> = () => {
     <nav
       className={`fixed w-full top-0 left-0 z-50 transition-all duration-300 ${
         scrolled 
-          ? 'bg-black border-b-2 border-zinc-800 py-2.5 md:py-3' 
-          : 'bg-black/90 backdrop-blur-md py-3 md:py-4 border-b border-zinc-900'
+          ? 'bg-white border-b border-slate-200 py-2.5 md:py-3 shadow-sm' 
+          : 'bg-white/95 backdrop-blur-md py-3 md:py-4 border-b border-slate-200/80'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -52,7 +54,7 @@ const Navbar: React.FC<{ alwaysVisible?: boolean }> = () => {
               height="24" 
               viewBox="0 0 24 24" 
               fill="none" 
-              stroke="#9b1c1c" 
+              stroke="#2563eb" 
               strokeWidth="2" 
               strokeLinecap="round" 
               strokeLinejoin="round"
@@ -64,8 +66,8 @@ const Navbar: React.FC<{ alwaysVisible?: boolean }> = () => {
               <line x1="18" x2="18.01" y1="11" y2="11"/>
               <rect width="20" height="12" x="2" y="6" rx="2"/>
             </svg>
-            <span className="text-lg md:text-xl font-headline font-black tracking-tight text-white uppercase transition-colors group-hover:text-[var(--vintage-accent-1)]">
-              SANDESH <span className="font-light italic text-[var(--vintage-accent-1)] group-hover:text-white">AGRAWAL.</span>
+            <span className="text-lg md:text-xl font-headline font-black tracking-tight text-slate-900 uppercase transition-colors group-hover:text-blue-600">
+              SANDESH <span className="font-light italic text-blue-600 group-hover:text-slate-900">AGRAWAL.</span>
             </span>
           </a>
 
@@ -75,17 +77,17 @@ const Navbar: React.FC<{ alwaysVisible?: boolean }> = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-zinc-400 hover:text-white transition-colors duration-250 text-[10px] uppercase tracking-[0.2em] font-bold font-body relative group"
+                className="text-slate-600 hover:text-blue-600 transition-colors duration-250 text-[11px] uppercase tracking-[0.2em] font-bold font-body relative group"
               >
                 {link.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-[var(--vintage-accent-1)] transition-all duration-300 group-hover:w-full" />
+                <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-blue-600 transition-all duration-300 group-hover:w-full" />
               </a>
             ))}
             <a
               href="https://wa.me/9303228082"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-5 py-2 border-2 border-zinc-800 hover:border-[#25D366] hover:text-[#25D366] text-white text-[9px] font-bold transition-all uppercase tracking-widest font-body bg-zinc-950 rounded-none"
+              className="px-5 py-2 bg-blue-600 hover:bg-blue-700 text-white text-[10px] font-bold transition-all uppercase tracking-widest font-body rounded-lg shadow-md shadow-blue-500/20"
             >
               WHATSAPP NOW ➲
             </a>
@@ -95,7 +97,10 @@ const Navbar: React.FC<{ alwaysVisible?: boolean }> = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-zinc-400 hover:text-white p-2"
+              aria-label="Toggle Navigation Menu"
+              aria-expanded={isOpen}
+              aria-controls="mobile-menu"
+              className="text-slate-700 hover:text-blue-600 p-2"
             >
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
@@ -107,7 +112,7 @@ const Navbar: React.FC<{ alwaysVisible?: boolean }> = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="md:hidden absolute w-full left-0 top-full border-t-4 border-zinc-800 bg-black/95 backdrop-blur-3xl overflow-hidden"
+            className="md:hidden absolute w-full left-0 top-full border-t border-slate-200 bg-white/98 backdrop-blur-xl overflow-hidden shadow-xl"
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
@@ -118,7 +123,7 @@ const Navbar: React.FC<{ alwaysVisible?: boolean }> = () => {
                 <a
                   key={link.name}
                   href={link.href}
-                  className="block text-center text-xs font-bold text-zinc-400 hover:text-white font-body uppercase tracking-[0.2em] py-3 border-b border-zinc-900"
+                  className="block text-center text-xs font-bold text-slate-700 hover:text-blue-600 font-body uppercase tracking-[0.2em] py-3 border-b border-slate-100"
                   onClick={() => setIsOpen(false)}
                 >
                   {link.name}
@@ -128,7 +133,7 @@ const Navbar: React.FC<{ alwaysVisible?: boolean }> = () => {
                 href="https://wa.me/9303228082"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block text-center text-xs font-bold text-[#25D366] py-3 font-body uppercase tracking-[0.2em]"
+                className="block text-center text-xs font-bold text-white bg-blue-600 py-3 rounded-lg font-body uppercase tracking-[0.2em]"
                 onClick={() => setIsOpen(false)}
               >
                 WHATSAPP NOW ➲
