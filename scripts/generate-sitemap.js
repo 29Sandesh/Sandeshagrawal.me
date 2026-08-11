@@ -6,7 +6,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const projectRoot = path.resolve(__dirname, '..');
 
-const BASE_URL = 'https://sandeshagrawal.me';
+const BASE_URL = 'https://sandeshagrawal.tech';
 
 // Static routes
 const staticRoutes = [

@@ -16,7 +16,7 @@ interface SEOHeadProps {
 const DEFAULT_TITLE = 'Sandesh Agrawal | Technical GTM Engineer';
 const DEFAULT_DESCRIPTION = 'Sandesh Agrawal is a Technical GTM Engineer specializing in AI-powered lead generation, outbound automation, growth infrastructure, and full-stack SaaS products.';
 const DEFAULT_KEYWORDS = 'Technical GTM Engineer, GTM Engineer Indore, AI Lead Generation, Outbound Automation, Growth Infrastructure, AI Agents, Sandesh Agrawal';
-const SITE_URL = 'https://sandeshagrawal.me';
+const SITE_URL = 'https://sandeshagrawal.tech';
 const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.png`;
 
 export const SEOHead: React.FC<SEOHeadProps> = ({
