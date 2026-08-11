@@ -73,6 +73,9 @@ const Footer: React.FC = () => {
                                 <a href="/services/india-b2b-saas" className="hover:text-blue-400 transition-colors">India B2B SaaS</a>
                             </li>
                             <li>
+                                <a href="/restaurant-website" className="hover:text-blue-400 transition-colors font-medium text-blue-400">🍽️ Restaurant Sites</a>
+                            </li>
+                            <li>
                                 <a href="/gtm-engineer/" className="hover:text-blue-400 transition-colors">State Directory</a>
                             </li>
                         </ul>

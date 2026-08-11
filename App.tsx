@@ -31,6 +31,9 @@ import VerticalGTMPage from './components/VerticalGTMPage';
 import NotFoundPage from './components/NotFoundPage';
 import SEOHead from './components/SEOHead';
 import { MARQUEE_ITEMS } from './constants';
+import RestaurantCityPage from './components/RestaurantCityPage';
+import RestaurantCountryHub from './components/RestaurantCountryHub';
+import RestaurantMainHub from './components/RestaurantMainHub';
 
 const App: React.FC = () => {
   const path = window.location.pathname;
@@ -126,6 +129,25 @@ const App: React.FC = () => {
   if (path.startsWith('/projects/')) {
     const slug = path.split('/')[2];
     if (slug) return <ProjectDetail slug={slug} />;
+  }
+
+  // Handle /restaurant-website hub and country hubs
+  if (path === '/restaurant-website' || path === '/restaurant-website/') {
+    return <RestaurantMainHub />;
+  }
+
+  if (path.startsWith('/restaurant-website/')) {
+    const countrySlug = path.split('/')[2];
+    if (countrySlug) return <RestaurantCountryHub countrySlug={countrySlug} />;
+  }
+
+  // Handle wildcard `/:serviceSlug-in-:citySlug` pattern for 10,000+ restaurant pages
+  const cleanPath = path.replace(/^\/+|\/+$/g, '');
+  if (cleanPath.includes('-in-')) {
+    const parts = cleanPath.split('-in-');
+    if (parts.length === 2 && parts[0] && parts[1]) {
+      return <RestaurantCityPage serviceSlug={parts[0]} citySlug={parts[1]} />;
+    }
   }
 
   // ── 404 Fallback for unknown top-level routes ──────────────────────────────
