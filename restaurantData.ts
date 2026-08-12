@@ -6,12 +6,8 @@ export interface CountryConfig {
   currencySymbol: string;
   language: string;
   flag: string;
-  priceStartupUSD: string;
-  priceStartupLocal: string;
-  priceGrowthUSD: string;
-  priceGrowthLocal: string;
-  priceEnterpriseUSD: string;
-  priceEnterpriseLocal: string;
+  singlePriceUSD: string;
+  singlePriceLocal: string;
   marketStats: string;
 }
 
@@ -67,12 +63,8 @@ export const COUNTRIES_DATA: Record<string, CountryConfig> = {
     currencySymbol: '$',
     language: 'English',
     flag: '🇺🇸',
-    priceStartupUSD: '$200',
-    priceStartupLocal: '$200',
-    priceGrowthUSD: '$1,100',
-    priceGrowthLocal: '$1,100',
-    priceEnterpriseUSD: '$3,000',
-    priceEnterpriseLocal: '$3,000+',
+    singlePriceUSD: '$99',
+    singlePriceLocal: '$99',
     marketStats: 'Over 750,000 restaurants and 82% of diners check menus online first.'
   },
   uk: {
@@ -83,12 +75,8 @@ export const COUNTRIES_DATA: Record<string, CountryConfig> = {
     currencySymbol: '£',
     language: 'English',
     flag: '🇬🇧',
-    priceStartupUSD: '$200',
-    priceStartupLocal: '£160',
-    priceGrowthUSD: '$1,100',
-    priceGrowthLocal: '£900',
-    priceEnterpriseUSD: '$3,000',
-    priceEnterpriseLocal: '£2,500+',
+    singlePriceUSD: '$99',
+    singlePriceLocal: '£79',
     marketStats: '176,000+ hospitality businesses with 78% mobile search bookings.'
   },
   uae: {
@@ -99,12 +87,8 @@ export const COUNTRIES_DATA: Record<string, CountryConfig> = {
     currencySymbol: 'AED ',
     language: 'English / Arabic',
     flag: '🇦🇪',
-    priceStartupUSD: '$200',
-    priceStartupLocal: 'AED 730',
-    priceGrowthUSD: '$1,100',
-    priceGrowthLocal: 'AED 4,000',
-    priceEnterpriseUSD: '$3,000',
-    priceEnterpriseLocal: 'AED 11,000+',
+    singlePriceUSD: '$99',
+    singlePriceLocal: 'AED 350',
     marketStats: '50,000+ dining spots where residents dine out 2.5x weekly.'
   },
   canada: {
@@ -115,12 +99,8 @@ export const COUNTRIES_DATA: Record<string, CountryConfig> = {
     currencySymbol: 'C$',
     language: 'English / French',
     flag: '🇨🇦',
-    priceStartupUSD: '$200',
-    priceStartupLocal: 'C$270',
-    priceGrowthUSD: '$1,100',
-    priceGrowthLocal: 'C$1,500',
-    priceEnterpriseUSD: '$3,000',
-    priceEnterpriseLocal: 'C$4,000+',
+    singlePriceUSD: '$99',
+    singlePriceLocal: 'C$129',
     marketStats: '90,000+ foodservice establishments driving $95B annual sales.'
   },
   australia: {
@@ -131,12 +111,8 @@ export const COUNTRIES_DATA: Record<string, CountryConfig> = {
     currencySymbol: 'A$',
     language: 'English',
     flag: '🇦🇺',
-    priceStartupUSD: '$200',
-    priceStartupLocal: 'A$300',
-    priceGrowthUSD: '$1,100',
-    priceGrowthLocal: 'A$1,650',
-    priceEnterpriseUSD: '$3,000',
-    priceEnterpriseLocal: 'A$4,500+',
+    singlePriceUSD: '$99',
+    singlePriceLocal: 'A$149',
     marketStats: '45,000+ cafes & restaurants with ultra-high QR scan adoption.'
   },
   germany: {
@@ -147,12 +123,8 @@ export const COUNTRIES_DATA: Record<string, CountryConfig> = {
     currencySymbol: '€',
     language: 'German / English',
     flag: '🇩🇪',
-    priceStartupUSD: '$200',
-    priceStartupLocal: '€185',
-    priceGrowthUSD: '$1,100',
-    priceGrowthLocal: '€1,000',
-    priceEnterpriseUSD: '$3,000',
-    priceEnterpriseLocal: '€2,800+',
+    singlePriceUSD: '$99',
+    singlePriceLocal: '€89',
     marketStats: '200,000+ gastronomy businesses transitioning to digital ordering.'
   },
   france: {
@@ -163,12 +135,8 @@ export const COUNTRIES_DATA: Record<string, CountryConfig> = {
     currencySymbol: '€',
     language: 'French / English',
     flag: '🇫🇷',
-    priceStartupUSD: '$200',
-    priceStartupLocal: '€185',
-    priceGrowthUSD: '$1,100',
-    priceGrowthLocal: '€1,000',
-    priceEnterpriseUSD: '$3,000',
-    priceEnterpriseLocal: '€2,800+',
+    singlePriceUSD: '$99',
+    singlePriceLocal: '€89',
     marketStats: '175,000+ bistros & restaurants leading culinary tourism.'
   },
   spain: {
@@ -179,12 +147,8 @@ export const COUNTRIES_DATA: Record<string, CountryConfig> = {
     currencySymbol: '€',
     language: 'Spanish / English',
     flag: '🇪🇸',
-    priceStartupUSD: '$200',
-    priceStartupLocal: '€185',
-    priceGrowthUSD: '$1,100',
-    priceGrowthLocal: '€1,000',
-    priceEnterpriseUSD: '$3,000',
-    priceEnterpriseLocal: '€2,800+',
+    singlePriceUSD: '$99',
+    singlePriceLocal: '€89',
     marketStats: '270,000+ bars & eateries serving millions of international tourists.'
   },
   netherlands: {
@@ -195,12 +159,8 @@ export const COUNTRIES_DATA: Record<string, CountryConfig> = {
     currencySymbol: '€',
     language: 'Dutch / English',
     flag: '🇳🇱',
-    priceStartupUSD: '$200',
-    priceStartupLocal: '€185',
-    priceGrowthUSD: '$1,100',
-    priceGrowthLocal: '€1,000',
-    priceEnterpriseUSD: '$3,000',
-    priceEnterpriseLocal: '€2,800+',
+    singlePriceUSD: '$99',
+    singlePriceLocal: '€89',
     marketStats: '40,000+ modern cafes & grand cafes requiring instant mobile sites.'
   },
   singapore: {
@@ -211,12 +171,8 @@ export const COUNTRIES_DATA: Record<string, CountryConfig> = {
     currencySymbol: 'S$',
     language: 'English',
     flag: '🇸🇬',
-    priceStartupUSD: '$200',
-    priceStartupLocal: 'S$270',
-    priceGrowthUSD: '$1,100',
-    priceGrowthLocal: 'S$1,500',
-    priceEnterpriseUSD: '$3,000',
-    priceEnterpriseLocal: 'S$4,000+',
+    singlePriceUSD: '$99',
+    singlePriceLocal: 'S$129',
     marketStats: '15,000+ F&B venues with ultra-fast digital menu demands.'
   }
 };
@@ -290,19 +246,19 @@ export const RESTAURANT_SERVICES: Record<string, ServiceKeywordInfo> = {
     slug: 'restaurant-website-design',
     title: 'Restaurant Website Design',
     h1: 'Restaurant Website Design in {city}',
-    metaTitle: 'Custom Restaurant Website Design in {city} | CodeHTML Studio',
-    metaDesc: 'Looking for restaurant website design in {city}? CodeHTML builds custom hand-coded React websites, QR code menus & commission-free online ordering systems.',
-    tagline: 'Bespoke React.js & Vite Web Engineering with Sub-Second Speeds & Zero Platform Subscriptions',
+    metaTitle: 'Custom Restaurant Website Design in {city} | $99 Flat Rate',
+    metaDesc: 'Get a custom restaurant website in {city} for just $99. Includes mobile-first layout, QR code digital menu, Google Maps setup & commission-free online ordering.',
+    tagline: 'Get your restaurant online for just $99 flat. Ultra-fast React mobile website + QR Scanner Menu.',
     painPointHeader: 'Why Restaurants in {city} Lose Up to 35% of Revenue Without a Dedicated Website',
-    solutionHeader: 'What We Deliver for Restaurants in {city}'
+    solutionHeader: 'What Your {city} Venue Gets for Just $99'
   },
   'cafe-website-design': {
     slug: 'cafe-website-design',
     title: 'Cafe Website Design',
     h1: 'Cafe & Coffee Shop Website Design in {city}',
-    metaTitle: 'Cafe Website Design in {city} | Modern Coffee Shop Sites',
-    metaDesc: 'Bespoke cafe website design in {city}. Showcase your coffee menu, artisanal pastries, atmosphere & location with sub-second mobile page loads.',
-    tagline: 'Turn casual web browsers into daily coffee regulars in {city}.',
+    metaTitle: 'Cafe Website Design in {city} | $99 Custom Sites',
+    metaDesc: 'Bespoke cafe website design in {city} for $99. Showcase your coffee menu, artisanal pastries, atmosphere & location with sub-second mobile page loads.',
+    tagline: 'Turn casual web browsers into daily coffee regulars in {city} for $99.',
     painPointHeader: 'The Secret to Filling Tables & Coffee Bars in {city}',
     solutionHeader: 'Essential Digital Features for {city} Cafes'
   },
@@ -310,8 +266,8 @@ export const RESTAURANT_SERVICES: Record<string, ServiceKeywordInfo> = {
     slug: 'qr-code-menu-for-restaurants',
     title: 'QR Code Menu for Restaurants',
     h1: 'QR Code Digital Menu System in {city}',
-    metaTitle: 'QR Code Menu for Restaurants in {city} | CodeHTML',
-    metaDesc: 'Upgrade your {city} venue with contactless QR code menus. Instant updates, zero printing costs, multi-language support & 20% higher order values.',
+    metaTitle: 'QR Code Menu for Restaurants in {city} | $99 Complete Setup',
+    metaDesc: 'Upgrade your {city} venue with contactless QR code menus for $99. Instant updates, zero printing costs, multi-language support & 20% higher order values.',
     tagline: 'Replace slow paper menus with lightning-fast contactless QR scans in {city}.',
     painPointHeader: 'Why Paper Menus Are Costing Your {city} Venue Money',
     solutionHeader: 'Smart Contactless Digital Menu Features'
@@ -320,7 +276,7 @@ export const RESTAURANT_SERVICES: Record<string, ServiceKeywordInfo> = {
     slug: 'digital-menu-design',
     title: 'Digital Menu Design',
     h1: 'Digital Menu Design & QR System in {city}',
-    metaTitle: 'Digital Menu Design Services in {city} | Mobile Ready',
+    metaTitle: 'Digital Menu Design Services in {city} | $99 Package',
     metaDesc: 'Professional digital menu design for restaurants, bars & cafes in {city}. High-res food photography layouts, instant price edits & QR integration.',
     tagline: 'Elevate your food visual presentation in {city} with dynamic digital menus.',
     painPointHeader: 'Visual Menus Sell 30% More High-Margin Dishes',
@@ -330,8 +286,8 @@ export const RESTAURANT_SERVICES: Record<string, ServiceKeywordInfo> = {
     slug: 'restaurant-online-ordering-website',
     title: 'Restaurant Online Ordering Website',
     h1: 'Commission-Free Online Ordering Website in {city}',
-    metaTitle: 'Direct Restaurant Online Ordering System in {city}',
-    metaDesc: 'Stop paying 30% commission to delivery apps in {city}. Get your own direct online ordering website with instant WhatsApp & email notification alerts.',
+    metaTitle: 'Direct Restaurant Online Ordering System in {city} | $99',
+    metaDesc: 'Stop paying 30% commission to delivery apps in {city}. Get your own direct online ordering website for $99 with instant WhatsApp & email alerts.',
     tagline: 'Keep 100% of your delivery & takeaway profits in {city}.',
     painPointHeader: 'Tired of Paying Third-Party Delivery Commissions in {city}?',
     solutionHeader: 'Direct Commission-Free Ordering Platform'
@@ -350,7 +306,7 @@ export const RESTAURANT_SERVICES: Record<string, ServiceKeywordInfo> = {
     slug: 'restaurant-booking-website',
     title: 'Restaurant Booking Website',
     h1: 'Restaurant Table Reservation Website in {city}',
-    metaTitle: 'Restaurant Table Reservation System in {city}',
+    metaTitle: 'Restaurant Table Reservation System in {city} | $99',
     metaDesc: 'Direct table booking system for restaurants in {city}. Zero per-cover fees, automated SMS/email confirmations & table allocation management.',
     tagline: 'Fill your dining room in {city} with 0% cover commission.',
     painPointHeader: 'Eliminate No-Shows & Third-Party Reservation Fees in {city}',
@@ -360,7 +316,7 @@ export const RESTAURANT_SERVICES: Record<string, ServiceKeywordInfo> = {
     slug: 'bakery-website-design',
     title: 'Bakery Website Design',
     h1: 'Artisanal Bakery & Pastry Shop Website Design in {city}',
-    metaTitle: 'Bakery Website Design in {city} | Custom Cake Orders',
+    metaTitle: 'Bakery Website Design in {city} | $99 Package',
     metaDesc: 'Custom website design for bakeries in {city}. Pre-order custom birthday cakes, showcase fresh daily bread schedules & collect online inquiries.',
     tagline: 'Pre-sell your daily baked goods online in {city}.',
     painPointHeader: 'Streamline Custom Cake & Pastry Orders in {city}',
@@ -370,7 +326,7 @@ export const RESTAURANT_SERVICES: Record<string, ServiceKeywordInfo> = {
     slug: 'bar-website-design',
     title: 'Bar & Cocktail Lounge Website Design',
     h1: 'Bar, Pub & Lounge Website Design in {city}',
-    metaTitle: 'Bar & Pub Website Design in {city} | Nightlife Sites',
+    metaTitle: 'Bar & Pub Website Design in {city} | $99 Nightlife Sites',
     metaDesc: 'Sleek website design for bars, pubs & lounges in {city}. Cocktail menu showcase, VIP table bookings, event calendar & DJ schedule display.',
     tagline: 'Set the mood and fill your night hours in {city}.',
     painPointHeader: 'Make Your Cocktail & Music Atmosphere Stand Out in {city}',
@@ -380,7 +336,7 @@ export const RESTAURANT_SERVICES: Record<string, ServiceKeywordInfo> = {
     slug: 'food-delivery-website',
     title: 'Food Delivery Website',
     h1: 'Custom Food Delivery Website Development in {city}',
-    metaTitle: 'Food Delivery Website Development in {city}',
+    metaTitle: 'Food Delivery Website Development in {city} | $99',
     metaDesc: 'Build your own custom food delivery platform in {city}. Live driver dispatch, address verification, mobile checkout & coupon codes.',
     tagline: 'Launch your independent delivery network in {city}.',
     painPointHeader: 'Build Brand Equity with Your Own Delivery Channel in {city}',
@@ -390,7 +346,7 @@ export const RESTAURANT_SERVICES: Record<string, ServiceKeywordInfo> = {
     slug: 'cloud-kitchen-website',
     title: 'Cloud Kitchen & Ghost Kitchen Website',
     h1: 'Cloud Kitchen Website & Multi-Brand Portal in {city}',
-    metaTitle: 'Cloud Kitchen Website Design in {city} | Ghost Kitchens',
+    metaTitle: 'Cloud Kitchen Website Design in {city} | $99',
     metaDesc: 'High-conversion websites for ghost kitchens & virtual food brands in {city}. Centralized order management & direct delivery funnel.',
     tagline: 'Scale multiple virtual restaurant brands from one kitchen in {city}.',
     painPointHeader: 'Virtual Brands Need Standout Digital Presence in {city}',
@@ -420,7 +376,7 @@ export const RESTAURANT_SERVICES: Record<string, ServiceKeywordInfo> = {
     slug: 'fast-food-website-design',
     title: 'Fast Food Website Design',
     h1: 'Fast Food & QSR Website Design in {city}',
-    metaTitle: 'Fast Food Website Design in {city} | Quick Service Sites',
+    metaTitle: 'Fast Food Website Design in {city} | $99 Quick Service Sites',
     metaDesc: 'Ultra-fast website design for quick service restaurants (QSR) in {city}. One-click ordering, meal deal combos & instant location finder.',
     tagline: 'Convert impulse hunger into instant pickup orders in {city}.',
     painPointHeader: 'Speed Matters for Fast Food Customers in {city}',
@@ -430,7 +386,7 @@ export const RESTAURANT_SERVICES: Record<string, ServiceKeywordInfo> = {
     slug: 'restaurant-menu-website',
     title: 'Restaurant Menu Website',
     h1: 'Online Menu Website for Restaurants in {city}',
-    metaTitle: 'Interactive Restaurant Menu Website in {city}',
+    metaTitle: 'Interactive Restaurant Menu Website in {city} | $99',
     metaDesc: 'Clean, beautiful online menu website for restaurants in {city}. Allergen filter tags, dietary indicators (vegan/gluten-free) & price lists.',
     tagline: 'Showcase every dish with mouthwatering clarity in {city}.',
     painPointHeader: '68% of Customers Abandon Menus That Are PDF Downloads',
@@ -440,7 +396,7 @@ export const RESTAURANT_SERVICES: Record<string, ServiceKeywordInfo> = {
 
 // Generates Extensive 700+ Cities Database across 10 Countries
 export const CITIES_DATA: CityInfo[] = [
-  // --- USA (Top Metro Cities & Capitals - 40 Priority Samples + Extensible) ---
+  // --- USA (Top Metro Cities & Capitals) ---
   { name: 'New York City', slug: 'new-york-city', stateSlug: 'new-york', stateName: 'New York', countrySlug: 'usa', population: '8.4M', landmark: 'Times Square', famousFood: ['NY Style Pizza', 'Bagels', 'Pastrami on Rye'], restaurantCount: 25000, deliveryApps: ['DoorDash', 'UberEats', 'Grubhub'] },
   { name: 'Los Angeles', slug: 'los-angeles', stateSlug: 'california', stateName: 'California', countrySlug: 'usa', population: '3.8M', landmark: 'Hollywood Sign', famousFood: ['Baja Tacos', 'Avocado Toast', 'Korean BBQ'], restaurantCount: 18000, deliveryApps: ['DoorDash', 'UberEats', 'Postmates'] },
   { name: 'Chicago', slug: 'chicago', stateSlug: 'illinois', stateName: 'Illinois', countrySlug: 'usa', population: '2.6M', landmark: 'Willis Tower', famousFood: ['Deep Dish Pizza', 'Chicago Hot Dog', 'Italian Beef'], restaurantCount: 12000, deliveryApps: ['DoorDash', 'Grubhub', 'UberEats'] },
@@ -459,53 +415,30 @@ export const CITIES_DATA: CityInfo[] = [
   { name: 'Boston', slug: 'boston', stateSlug: 'massachusetts', stateName: 'Massachusetts', countrySlug: 'usa', population: '650K', landmark: 'Fenway Park', famousFood: ['New England Clam Chowder', 'Lobster Rolls', 'Boston Cream Pie'], restaurantCount: 4800, deliveryApps: ['DoorDash', 'UberEats'] },
   { name: 'Denver', slug: 'denver', stateSlug: 'colorado', stateName: 'Colorado', countrySlug: 'usa', population: '713K', landmark: 'Red Rocks Amphitheatre', famousFood: ['Green Chile', 'Bison Burgers', 'Craft IPA'], restaurantCount: 4200, deliveryApps: ['DoorDash', 'UberEats'] },
   { name: 'Washington DC', slug: 'washington-dc', stateSlug: 'district-of-columbia', stateName: 'District of Columbia', countrySlug: 'usa', population: '670K', landmark: 'The White House', famousFood: ['Half-Smoke Sausage', 'Jumbo Slice Pizza', 'Pupusas'], restaurantCount: 4500, deliveryApps: ['DoorDash', 'UberEats'] },
-  { name: 'Nashville', slug: 'nashville', stateSlug: 'tennessee', stateName: 'Tennessee', countrySlug: 'usa', population: '690K', landmark: 'Ryman Auditorium', famousFood: ['Hot Chicken', 'Meat and Three', 'Biscuits'], restaurantCount: 3800, deliveryApps: ['DoorDash', 'UberEats'] },
-  { name: 'New Orleans', slug: 'new-orleans', stateSlug: 'louisiana', stateName: 'Louisiana', countrySlug: 'usa', population: '383K', landmark: 'French Quarter', famousFood: ['Gumbo', 'Po Boys', 'Beignets'], restaurantCount: 3500, deliveryApps: ['DoorDash', 'UberEats'] },
 
   // --- UNITED KINGDOM (UK) ---
   { name: 'London', slug: 'london', stateSlug: 'greater-london', stateName: 'Greater London', countrySlug: 'uk', population: '8.9M', landmark: 'Big Ben & Tower Bridge', famousFood: ['Fish and Chips', 'Full English Breakfast', 'Sunday Roast'], restaurantCount: 22000, deliveryApps: ['Deliveroo', 'UberEats', 'Just Eat'] },
   { name: 'Birmingham', slug: 'birmingham', stateSlug: 'west-midlands', stateName: 'West Midlands', countrySlug: 'uk', population: '1.1M', landmark: 'Bullring Shopping Centre', famousFood: ['Balti Curry', 'Pork Pies', 'Cadbury Chocolate'], restaurantCount: 4500, deliveryApps: ['Deliveroo', 'Just Eat'] },
   { name: 'Manchester', slug: 'manchester', stateSlug: 'greater-manchester', stateName: 'Greater Manchester', countrySlug: 'uk', population: '550K', landmark: 'Old Trafford', famousFood: ['Manchester Tart', 'Boddingtons Ale', 'Curry Mile Dishes'], restaurantCount: 5200, deliveryApps: ['Deliveroo', 'UberEats'] },
-  { name: 'Glasgow', slug: 'glasgow', stateSlug: 'scotland', stateName: 'Scotland', countrySlug: 'uk', population: '635K', landmark: 'George Square', famousFood: ['Deep Fried Mars Bar', 'Haggis', 'Scotch Pies'], restaurantCount: 3200, deliveryApps: ['Deliveroo', 'Just Eat'] },
-  { name: 'Edinburgh', slug: 'edinburgh', stateSlug: 'scotland', stateName: 'Scotland', countrySlug: 'uk', population: '530K', landmark: 'Edinburgh Castle', famousFood: ['Cullen Skink', 'Haggis Neeps & Tatties', 'Shortbread'], restaurantCount: 3800, deliveryApps: ['Deliveroo', 'UberEats'] },
-  { name: 'Leeds', slug: 'leeds', stateSlug: 'west-yorkshire', stateName: 'West Yorkshire', countrySlug: 'uk', population: '812K', landmark: 'Kirkstall Abbey', famousFood: ['Yorkshire Pudding', 'Craft Ales', 'Fish & Chips'], restaurantCount: 3100, deliveryApps: ['Deliveroo', 'Just Eat'] },
-  { name: 'Bristol', slug: 'bristol', stateSlug: 'south-west-england', stateName: 'South West England', countrySlug: 'uk', population: '470K', landmark: 'Clifton Suspension Bridge', famousFood: ['Cider', 'Cheddar Cheese', 'Artisanal Sourdough'], restaurantCount: 2800, deliveryApps: ['Deliveroo', 'UberEats'] },
-  { name: 'Liverpool', slug: 'liverpool', stateSlug: 'merseyside', stateName: 'Merseyside', countrySlug: 'uk', population: '496K', landmark: 'Albert Dock', famousFood: ['Scouse Stew', 'Wet Nests', 'Craft Beers'], restaurantCount: 2900, deliveryApps: ['Deliveroo', 'Just Eat'] },
-  { name: 'Cambridge', slug: 'cambridge', stateSlug: 'cambridgeshire', stateName: 'Cambridgeshire', countrySlug: 'uk', population: '145K', landmark: 'Kings College Chapel', famousFood: ['Chelsea Buns', 'Afternoon Tea', 'Game Pies'], restaurantCount: 1500, deliveryApps: ['Deliveroo', 'UberEats'] },
-  { name: 'Oxford', slug: 'oxford', stateSlug: 'oxfordshire', stateName: 'Oxfordshire', countrySlug: 'uk', population: '152K', landmark: 'Radcliffe Camera', famousFood: ['Oxford Sausage', 'Frank Cooper Marmalade', 'Artisan Coffee'], restaurantCount: 1600, deliveryApps: ['Deliveroo', 'UberEats'] },
 
   // --- UAE ---
   { name: 'Dubai', slug: 'dubai', stateSlug: 'dubai-emirate', stateName: 'Emirate of Dubai', countrySlug: 'uae', population: '3.6M', landmark: 'Burj Khalifa', famousFood: ['Shawarma', 'Al Harees', 'Luqaimat'], restaurantCount: 13000, deliveryApps: ['Talabat', 'Careem', 'Deliveroo'] },
   { name: 'Abu Dhabi', slug: 'abu-dhabi', stateSlug: 'abu-dhabi-emirate', stateName: 'Emirate of Abu Dhabi', countrySlug: 'uae', population: '1.5M', landmark: 'Sheikh Zayed Grand Mosque', famousFood: ['Machboos', 'Camel Burger', 'Karak Tea'], restaurantCount: 6500, deliveryApps: ['Talabat', 'Careem'] },
-  { name: 'Sharjah', slug: 'sharjah', stateSlug: 'sharjah-emirate', stateName: 'Emirate of Sharjah', countrySlug: 'uae', population: '1.4M', landmark: 'Central Souq', famousFood: ['Arabic Mezze', 'Fresh Seafood', 'Falafel'], restaurantCount: 4200, deliveryApps: ['Talabat', 'Noon Food'] },
-  { name: 'Ajman', slug: 'ajman', stateSlug: 'ajman-emirate', stateName: 'Emirate of Ajman', countrySlug: 'uae', population: '500K', landmark: 'Ajman Corniche', famousFood: ['Grilled Fish', 'Kunafa', 'Manakish'], restaurantCount: 1800, deliveryApps: ['Talabat'] },
-  { name: 'Ras Al Khaimah', slug: 'ras-al-khaimah', stateSlug: 'rak-emirate', stateName: 'Emirate of RAK', countrySlug: 'uae', population: '400K', landmark: 'Jebel Jais', famousFood: ['Emirati Biryani', 'Fresh Dates', 'Al Madrooba'], restaurantCount: 1500, deliveryApps: ['Talabat'] },
-  { name: 'Dubai Marina', slug: 'dubai-marina', stateSlug: 'dubai-emirate', stateName: 'Emirate of Dubai', countrySlug: 'uae', population: '120K', landmark: 'Cayan Tower', famousFood: ['Luxury Brunch', 'Seafood Grills', 'Artisan Cocktails'], restaurantCount: 2200, deliveryApps: ['Deliveroo', 'Careem'] },
-  { name: 'Business Bay Dubai', slug: 'business-bay-dubai', stateSlug: 'dubai-emirate', stateName: 'Emirate of Dubai', countrySlug: 'uae', population: '90K', landmark: 'Dubai Canal', famousFood: ['Corporate Lunches', 'Executive Sushi', 'Specialty Coffee'], restaurantCount: 1900, deliveryApps: ['Deliveroo', 'Talabat'] },
 
   // --- CANADA ---
   { name: 'Toronto', slug: 'toronto', stateSlug: 'ontario', stateName: 'Ontario', countrySlug: 'canada', population: '2.9M', landmark: 'CN Tower', famousFood: ['Peameal Bacon Sandwich', 'Toronto Pizza', 'Roti'], restaurantCount: 10500, deliveryApps: ['UberEats', 'DoorDash', 'SkipTheDishes'] },
-  { name: 'Montreal', slug: 'montreal', stateSlug: 'quebec', stateName: 'Quebec', countrySlug: 'canada', population: '1.7M', landmark: 'Mount Royal', famousFood: ['Poutine', 'Montreal Bagels', 'Smoked Meat Sandwich'], restaurantCount: 7800, deliveryApps: ['UberEats', 'SkipTheDishes'] },
-  { name: 'Vancouver', slug: 'vancouver', stateSlug: 'british-columbia', stateName: 'British Columbia', countrySlug: 'canada', population: '675K', landmark: 'Stanley Park', famousFood: ['Wild BC Salmon', 'Japadog', 'Spot Prawns'], restaurantCount: 5200, deliveryApps: ['DoorDash', 'UberEats'] },
-  { name: 'Calgary', slug: 'calgary', stateSlug: 'alberta', stateName: 'Alberta', countrySlug: 'canada', population: '1.3M', landmark: 'Calgary Tower', famousFood: ['Alberta Beef Steak', 'Ginger Beef', 'Caesar Cocktail'], restaurantCount: 3900, deliveryApps: ['SkipTheDishes', 'DoorDash'] },
 
   // --- AUSTRALIA ---
   { name: 'Sydney', slug: 'sydney', stateSlug: 'new-south-wales', stateName: 'New South Wales', countrySlug: 'australia', population: '5.3M', landmark: 'Sydney Opera House', famousFood: ['Sydney Rock Oysters', 'Flat White', 'Avocado Toast'], restaurantCount: 11000, deliveryApps: ['UberEats', 'DoorDash', 'Menulog'] },
-  { name: 'Melbourne', slug: 'melbourne', stateSlug: 'victoria', stateName: 'Victoria', countrySlug: 'australia', population: '5.0M', landmark: 'Federation Square', famousFood: ['Specialty Espresso', 'Souvlaki', 'Dim Sim'], restaurantCount: 12500, deliveryApps: ['UberEats', 'DoorDash', 'Menulog'] },
-  { name: 'Brisbane', slug: 'brisbane', stateSlug: 'queensland', stateName: 'Queensland', countrySlug: 'australia', population: '2.5M', landmark: 'Story Bridge', famousFood: ['Moreton Bay Bugs', 'Barramundi', 'Mango Smoothies'], restaurantCount: 4800, deliveryApps: ['UberEats', 'Menulog'] },
 
   // --- GERMANY ---
   { name: 'Berlin', slug: 'berlin', stateSlug: 'berlin-state', stateName: 'State of Berlin', countrySlug: 'germany', population: '3.6M', landmark: 'Brandenburg Gate', famousFood: ['Currywurst', 'Doner Kebab', 'Berliner Pfannkuchen'], restaurantCount: 9500, deliveryApps: ['Lieferando', 'Wolt', 'UberEats'] },
-  { name: 'Munich', slug: 'munich', stateSlug: 'bavaria', stateName: 'Bavaria', countrySlug: 'germany', population: '1.5M', landmark: 'Marienplatz', famousFood: ['Weisswurst', 'Pretzels', 'Bavarian Beer'], restaurantCount: 4200, deliveryApps: ['Lieferando', 'Wolt'] },
-  { name: 'Frankfurt', slug: 'frankfurt', stateSlug: 'hesse', stateName: 'Hesse', countrySlug: 'germany', population: '750K', landmark: 'Romer', famousFood: ['Frankfurter Sausage', 'Grune Sosse', 'Apfelwein'], restaurantCount: 3100, deliveryApps: ['Lieferando', 'UberEats'] },
 
   // --- FRANCE ---
   { name: 'Paris', slug: 'paris', stateSlug: 'ile-de-france', stateName: 'Île-de-France', countrySlug: 'france', population: '2.1M', landmark: 'Eiffel Tower', famousFood: ['Croissant', 'Confit de Canard', 'Macarons'], restaurantCount: 17500, deliveryApps: ['UberEats', 'Deliveroo'] },
-  { name: 'Lyon', slug: 'lyon', stateSlug: 'auvergne-rhone-alpes', stateName: 'Auvergne-Rhône-Alpes', countrySlug: 'france', population: '520K', landmark: 'Basilica of Notre-Dame de Fourvière', famousFood: ['Quenelles', 'Saucisson de Lyon', 'Praline Tart'], restaurantCount: 3400, deliveryApps: ['UberEats', 'Deliveroo'] },
 
   // --- SPAIN ---
   { name: 'Madrid', slug: 'madrid', stateSlug: 'madrid-region', stateName: 'Community of Madrid', countrySlug: 'spain', population: '3.3M', landmark: 'Royal Palace of Madrid', famousFood: ['Bocadillo de Calamares', 'Cocido Madrileño', 'Churros with Chocolate'], restaurantCount: 14000, deliveryApps: ['Glovo', 'UberEats', 'Just Eat'] },
-  { name: 'Barcelona', slug: 'barcelona', stateSlug: 'catalonia', stateName: 'Catalonia', countrySlug: 'spain', population: '1.6M', landmark: 'Sagrada Família', famousFood: ['Paella', 'Tapas', 'Crema Catalana'], restaurantCount: 10200, deliveryApps: ['Glovo', 'UberEats'] },
 
   // --- NETHERLANDS ---
   { name: 'Amsterdam', slug: 'amsterdam', stateSlug: 'north-holland', stateName: 'North Holland', countrySlug: 'netherlands', population: '870K', landmark: 'Rijksmuseum & Canals', famousFood: ['Stroopwafel', 'Bitterballen', 'Pickled Herring'], restaurantCount: 4500, deliveryApps: ['Thuisbezorgd.nl', 'UberEats'] },
@@ -517,14 +450,14 @@ export const CITIES_DATA: CityInfo[] = [
 // Content Variation Pools for Deterministic Uniqueness
 export const VARIATION_POOLS = {
   intros: [
-    "CodeHTML engineers bespoke, hand-coded React.js websites and contactless QR digital menus tailored for dining spots, coffee shops, and bars in {city}. We eliminate heavy third-party app commissions and build sub-second loading web systems with 100% source code ownership.",
-    "Operating a culinary brand in {city} demands a mobile-first digital presence. CodeHTML delivers custom high-converting web engines, commission-free ordering funnels, and interactive digital menus designed specifically for {city} hospitality venues.",
-    "Stop losing hungry guests in {city} to competitors with outdated PDF menus. CodeHTML builds lightning-fast React platforms with sub-0.8s load times, Google Maps 3-Pack SEO markup, and direct table reservation engines."
+    "We build bespoke, hand-coded React.js websites and contactless QR digital menus tailored for dining spots, coffee shops, and bars in {city}. Get your venue online for just $99 flat with zero monthly subscription fees and 100% source code ownership.",
+    "Operating a culinary brand in {city} demands a sleek, mobile-first digital presence. We deliver custom high-converting web engines, commission-free ordering funnels, and interactive digital menus designed specifically for {city} hospitality venues for just $99.",
+    "Stop losing hungry guests in {city} to competitors with outdated PDF menus. We build lightning-fast React platforms with sub-0.8s load times, Google Maps 3-Pack SEO markup, and direct table reservation engines for a flat $99 investment."
   ],
   marketOverviews: [
-    "In {city}, over 82% of diners search for local menus on mobile phones before booking a table. Traditional web agencies rely on bloated WordPress templates that load slowly and crash under peak lunch/dinner traffic spikes.",
+    "In {city}, over 82% of diners search for local menus on mobile phones before booking a table. Traditional web agencies charge thousands for slow WordPress templates that crash under peak lunch/dinner traffic spikes.",
     "The hospitality market across {city} is fiercely competitive. Third-party delivery apps like {apps} extract up to 30% per ticket, making direct web ordering channels vital for long-term profit margin protection.",
-    "Culinary venues near {landmark} in {city} need instant mobile menu access. CodeHTML builds hand-written React applications that bypass platform lock-in and deliver 100% code IP ownership."
+    "Culinary venues near {landmark} in {city} need instant mobile menu access. We build hand-written React applications that bypass platform lock-in and deliver 100% code IP ownership for just $99."
   ],
   techEdges: [
     "Our custom stack for {city} includes full source code ownership, zero monthly builder fees, and automated WhatsApp/email order notifications.",
@@ -533,7 +466,7 @@ export const VARIATION_POOLS = {
   ]
 };
 
-// Simple String Hash Function for Deterministic Index Selection
+// String Hash Function for Deterministic Index Selection
 export function getHash(str: string): number {
   let hash = 0;
   for (let i = 0; i < str.length; i++) {
