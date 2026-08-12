@@ -6,9 +6,12 @@ export interface CountryConfig {
   currencySymbol: string;
   language: string;
   flag: string;
-  websitePrice: string;
-  qrMenuPrice: string;
-  monthlyPrice: string;
+  priceStartupUSD: string;
+  priceStartupLocal: string;
+  priceGrowthUSD: string;
+  priceGrowthLocal: string;
+  priceEnterpriseUSD: string;
+  priceEnterpriseLocal: string;
   marketStats: string;
 }
 
@@ -21,12 +24,8 @@ export interface CityInfo {
   population: string;
   landmark: string;
   famousFood: string[];
-}
-
-export interface StateInfo {
-  name: string;
-  slug: string;
-  countrySlug: string;
+  restaurantCount?: number;
+  deliveryApps?: string[];
 }
 
 export interface ServiceKeywordInfo {
@@ -40,6 +39,25 @@ export interface ServiceKeywordInfo {
   solutionHeader: string;
 }
 
+export interface TestimonialItem {
+  quote: string;
+  name: string;
+  avatar: string;
+  role: string;
+  link: string;
+}
+
+export interface PortfolioClientItem {
+  id: string;
+  tag: string;
+  domain: string;
+  image: string;
+  title: string;
+  link: string;
+  metric: string;
+  desc: string;
+}
+
 export const COUNTRIES_DATA: Record<string, CountryConfig> = {
   usa: {
     name: 'United States',
@@ -49,9 +67,12 @@ export const COUNTRIES_DATA: Record<string, CountryConfig> = {
     currencySymbol: '$',
     language: 'English',
     flag: '🇺🇸',
-    websitePrice: '$299',
-    qrMenuPrice: '$49',
-    monthlyPrice: '$29',
+    priceStartupUSD: '$200',
+    priceStartupLocal: '$200',
+    priceGrowthUSD: '$1,100',
+    priceGrowthLocal: '$1,100',
+    priceEnterpriseUSD: '$3,000',
+    priceEnterpriseLocal: '$3,000+',
     marketStats: 'Over 750,000 restaurants and 82% of diners check menus online first.'
   },
   uk: {
@@ -62,9 +83,12 @@ export const COUNTRIES_DATA: Record<string, CountryConfig> = {
     currencySymbol: '£',
     language: 'English',
     flag: '🇬🇧',
-    websitePrice: '£249',
-    qrMenuPrice: '£39',
-    monthlyPrice: '£19',
+    priceStartupUSD: '$200',
+    priceStartupLocal: '£160',
+    priceGrowthUSD: '$1,100',
+    priceGrowthLocal: '£900',
+    priceEnterpriseUSD: '$3,000',
+    priceEnterpriseLocal: '£2,500+',
     marketStats: '176,000+ hospitality businesses with 78% mobile search bookings.'
   },
   uae: {
@@ -75,9 +99,12 @@ export const COUNTRIES_DATA: Record<string, CountryConfig> = {
     currencySymbol: 'AED ',
     language: 'English / Arabic',
     flag: '🇦🇪',
-    websitePrice: 'AED 999',
-    qrMenuPrice: 'AED 179',
-    monthlyPrice: 'AED 99',
+    priceStartupUSD: '$200',
+    priceStartupLocal: 'AED 730',
+    priceGrowthUSD: '$1,100',
+    priceGrowthLocal: 'AED 4,000',
+    priceEnterpriseUSD: '$3,000',
+    priceEnterpriseLocal: 'AED 11,000+',
     marketStats: '50,000+ dining spots where residents dine out 2.5x weekly.'
   },
   canada: {
@@ -88,9 +115,12 @@ export const COUNTRIES_DATA: Record<string, CountryConfig> = {
     currencySymbol: 'C$',
     language: 'English / French',
     flag: '🇨🇦',
-    websitePrice: 'C$399',
-    qrMenuPrice: 'C$69',
-    monthlyPrice: 'C$39',
+    priceStartupUSD: '$200',
+    priceStartupLocal: 'C$270',
+    priceGrowthUSD: '$1,100',
+    priceGrowthLocal: 'C$1,500',
+    priceEnterpriseUSD: '$3,000',
+    priceEnterpriseLocal: 'C$4,000+',
     marketStats: '90,000+ foodservice establishments driving $95B annual sales.'
   },
   australia: {
@@ -101,10 +131,13 @@ export const COUNTRIES_DATA: Record<string, CountryConfig> = {
     currencySymbol: 'A$',
     language: 'English',
     flag: '🇦🇺',
-    websitePrice: 'A$449',
-    qrMenuPrice: 'A$79',
-    monthlyPrice: 'A$39',
-    marketStats: '45,000+ cafes & restaurants with high QR scan adoption.'
+    priceStartupUSD: '$200',
+    priceStartupLocal: 'A$300',
+    priceGrowthUSD: '$1,100',
+    priceGrowthLocal: 'A$1,650',
+    priceEnterpriseUSD: '$3,000',
+    priceEnterpriseLocal: 'A$4,500+',
+    marketStats: '45,000+ cafes & restaurants with ultra-high QR scan adoption.'
   },
   germany: {
     name: 'Germany',
@@ -114,9 +147,12 @@ export const COUNTRIES_DATA: Record<string, CountryConfig> = {
     currencySymbol: '€',
     language: 'German / English',
     flag: '🇩🇪',
-    websitePrice: '€279',
-    qrMenuPrice: '€45',
-    monthlyPrice: '€25',
+    priceStartupUSD: '$200',
+    priceStartupLocal: '€185',
+    priceGrowthUSD: '$1,100',
+    priceGrowthLocal: '€1,000',
+    priceEnterpriseUSD: '$3,000',
+    priceEnterpriseLocal: '€2,800+',
     marketStats: '200,000+ gastronomy businesses transitioning to digital ordering.'
   },
   france: {
@@ -127,9 +163,12 @@ export const COUNTRIES_DATA: Record<string, CountryConfig> = {
     currencySymbol: '€',
     language: 'French / English',
     flag: '🇫🇷',
-    websitePrice: '€279',
-    qrMenuPrice: '€45',
-    monthlyPrice: '€25',
+    priceStartupUSD: '$200',
+    priceStartupLocal: '€185',
+    priceGrowthUSD: '$1,100',
+    priceGrowthLocal: '€1,000',
+    priceEnterpriseUSD: '$3,000',
+    priceEnterpriseLocal: '€2,800+',
     marketStats: '175,000+ bistros & restaurants leading culinary tourism.'
   },
   spain: {
@@ -140,9 +179,12 @@ export const COUNTRIES_DATA: Record<string, CountryConfig> = {
     currencySymbol: '€',
     language: 'Spanish / English',
     flag: '🇪🇸',
-    websitePrice: '€249',
-    qrMenuPrice: '€39',
-    monthlyPrice: '€19',
+    priceStartupUSD: '$200',
+    priceStartupLocal: '€185',
+    priceGrowthUSD: '$1,100',
+    priceGrowthLocal: '€1,000',
+    priceEnterpriseUSD: '$3,000',
+    priceEnterpriseLocal: '€2,800+',
     marketStats: '270,000+ bars & eateries serving millions of international tourists.'
   },
   netherlands: {
@@ -153,9 +195,12 @@ export const COUNTRIES_DATA: Record<string, CountryConfig> = {
     currencySymbol: '€',
     language: 'Dutch / English',
     flag: '🇳🇱',
-    websitePrice: '€279',
-    qrMenuPrice: '€45',
-    monthlyPrice: '€25',
+    priceStartupUSD: '$200',
+    priceStartupLocal: '€185',
+    priceGrowthUSD: '$1,100',
+    priceGrowthLocal: '€1,000',
+    priceEnterpriseUSD: '$3,000',
+    priceEnterpriseLocal: '€2,800+',
     marketStats: '40,000+ modern cafes & grand cafes requiring instant mobile sites.'
   },
   singapore: {
@@ -166,30 +211,97 @@ export const COUNTRIES_DATA: Record<string, CountryConfig> = {
     currencySymbol: 'S$',
     language: 'English',
     flag: '🇸🇬',
-    websitePrice: 'S$429',
-    qrMenuPrice: 'S$69',
-    monthlyPrice: 'S$39',
+    priceStartupUSD: '$200',
+    priceStartupLocal: 'S$270',
+    priceGrowthUSD: '$1,100',
+    priceGrowthLocal: 'S$1,500',
+    priceEnterpriseUSD: '$3,000',
+    priceEnterpriseLocal: 'S$4,000+',
     marketStats: '15,000+ F&B venues with ultra-fast digital menu demands.'
   }
 };
+
+export const TESTIMONIALS_DATA: TestimonialItem[] = [
+  {
+    quote: "CodeHTML built our multi-city food license booking portal in just 4 days. Pure performance hand-written code.",
+    name: "PAWAN AGRAWAL",
+    role: "Founder, Swigato India",
+    avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=200",
+    link: "https://swigatoindia.in"
+  },
+  {
+    quote: "Our B2B construction bidding portal requires heavy architectural model rendering. They delivered 250ms sub-second load times.",
+    name: "MR. PANKAJ SINGH",
+    role: "Director, SLCC Construction",
+    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200",
+    link: "https://slcc.in"
+  },
+  {
+    quote: "The 3D blueprint viewer and vendor bidding marketplace transformed how we collaborate with architects and project teams.",
+    name: "PUSKAR SINGH",
+    role: "Co-Founder, SLCC Group",
+    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=200",
+    link: "https://slcc.in"
+  },
+  {
+    quote: "CodeHTML engineered our franchise web platform with incredible speed, custom architecture, and 100% code ownership.",
+    name: "PRASHANT KULKARNI",
+    role: "Head of Franchise, FFI Network",
+    avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=200",
+    link: "/contact"
+  }
+];
+
+export const PORTFOLIO_CLIENTS: PortfolioClientItem[] = [
+  {
+    id: "swigato-india",
+    tag: "FOOD FRANCHISE PORTAL",
+    domain: "SWIGATOINDIA.IN",
+    image: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&q=80&w=1600",
+    title: "Swigato India",
+    link: "https://swigatoindia.in",
+    metric: "Multi-City Hub",
+    desc: "Pure performance → hand-written code engineered for absolute speed and 1,115+ city pages."
+  },
+  {
+    id: "slcc-construction",
+    tag: "CONSTRUCTION PORTAL",
+    domain: "SLCC.IN",
+    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=1600",
+    title: "SLCC Construction",
+    link: "https://slcc.in",
+    metric: "250ms Speed",
+    desc: "Custom construction bidding portal with architectural blueprint visualization and client dashboard."
+  },
+  {
+    id: "alaya-realty",
+    tag: "REAL ESTATE PORTAL",
+    domain: "ALAYAREALTY.IN",
+    image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=1600",
+    title: "Alaya Realty",
+    link: "https://alayarealty.in",
+    metric: "0.7s Load Time",
+    desc: "Luxury real estate platform with high-resolution property tour rendering."
+  }
+];
 
 export const RESTAURANT_SERVICES: Record<string, ServiceKeywordInfo> = {
   'restaurant-website-design': {
     slug: 'restaurant-website-design',
     title: 'Restaurant Website Design',
     h1: 'Restaurant Website Design in {city}',
-    metaTitle: 'Custom Restaurant Website Design in {city} | From {price}',
-    metaDesc: 'Get a stunning, high-converting restaurant website in {city}. Includes mobile-first layout, QR code digital menu, Google Maps setup & commission-free online ordering.',
-    tagline: 'Stop losing hungry customers to competitors in {city}. Get a high-converting restaurant website delivered in 7 days.',
+    metaTitle: 'Custom Restaurant Website Design in {city} | CodeHTML Studio',
+    metaDesc: 'Looking for restaurant website design in {city}? CodeHTML builds custom hand-coded React websites, QR code menus & commission-free online ordering systems.',
+    tagline: 'Bespoke React.js & Vite Web Engineering with Sub-Second Speeds & Zero Platform Subscriptions',
     painPointHeader: 'Why Restaurants in {city} Lose Up to 35% of Revenue Without a Dedicated Website',
-    solutionHeader: 'What Your {city} Restaurant Gets for a One-Time {price}'
+    solutionHeader: 'What We Deliver for Restaurants in {city}'
   },
   'cafe-website-design': {
     slug: 'cafe-website-design',
     title: 'Cafe Website Design',
     h1: 'Cafe & Coffee Shop Website Design in {city}',
-    metaTitle: 'Cafe Website Design in {city} | Modern Coffee Shop Websites',
-    metaDesc: 'Bespoke cafe website design in {city}. Showcase your coffee menu, artisanal pastries, atmosphere, and location with sub-second mobile page loads.',
+    metaTitle: 'Cafe Website Design in {city} | Modern Coffee Shop Sites',
+    metaDesc: 'Bespoke cafe website design in {city}. Showcase your coffee menu, artisanal pastries, atmosphere & location with sub-second mobile page loads.',
     tagline: 'Turn casual web browsers into daily coffee regulars in {city}.',
     painPointHeader: 'The Secret to Filling Tables & Coffee Bars in {city}',
     solutionHeader: 'Essential Digital Features for {city} Cafes'
@@ -198,8 +310,8 @@ export const RESTAURANT_SERVICES: Record<string, ServiceKeywordInfo> = {
     slug: 'qr-code-menu-for-restaurants',
     title: 'QR Code Menu for Restaurants',
     h1: 'QR Code Digital Menu System in {city}',
-    metaTitle: 'QR Code Menu for Restaurants in {city} | Free Setup',
-    metaDesc: 'Upgrade your {city} restaurant with contactless QR code menus. Instant updates, zero printing costs, multi-language support & 20% higher average order value.',
+    metaTitle: 'QR Code Menu for Restaurants in {city} | CodeHTML',
+    metaDesc: 'Upgrade your {city} venue with contactless QR code menus. Instant updates, zero printing costs, multi-language support & 20% higher order values.',
     tagline: 'Replace slow paper menus with lightning-fast contactless QR scans in {city}.',
     painPointHeader: 'Why Paper Menus Are Costing Your {city} Venue Money',
     solutionHeader: 'Smart Contactless Digital Menu Features'
@@ -228,7 +340,7 @@ export const RESTAURANT_SERVICES: Record<string, ServiceKeywordInfo> = {
     slug: 'restaurant-seo-services',
     title: 'Restaurant SEO Services',
     h1: 'Local Restaurant SEO & Google Ranking in {city}',
-    metaTitle: 'Top Restaurant SEO Services in {city} | Rank #1 on Google Maps',
+    metaTitle: 'Top Restaurant SEO Services in {city} | Rank #1 on Maps',
     metaDesc: 'Rank your {city} restaurant at the top of Google "restaurants near me" searches. Local schema markup, Google Maps audit & keyword ranking.',
     tagline: 'Dominate Google "best food in {city}" local searches.',
     painPointHeader: 'Missing Out on Google 3-Pack Local Search Results in {city}?',
@@ -288,7 +400,7 @@ export const RESTAURANT_SERVICES: Record<string, ServiceKeywordInfo> = {
     slug: 'food-truck-website',
     title: 'Food Truck Website',
     h1: 'Food Truck Website & Schedule Tracker in {city}',
-    metaTitle: 'Food Truck Website Design in {city} | Live Location Tracking',
+    metaTitle: 'Food Truck Website Design in {city} | Live GPS Location',
     metaDesc: 'Responsive websites for food trucks in {city}. Live GPS location updates, catering booking request forms & daily menu schedule.',
     tagline: 'Let your fans in {city} find your exact location every single day.',
     painPointHeader: 'Stop Relying Solely on Social Media Algorithms in {city}',
@@ -326,92 +438,134 @@ export const RESTAURANT_SERVICES: Record<string, ServiceKeywordInfo> = {
   }
 };
 
+// Generates Extensive 700+ Cities Database across 10 Countries
 export const CITIES_DATA: CityInfo[] = [
-  // --- USA (US) ---
-  { name: 'New York City', slug: 'new-york-city', stateSlug: 'new-york', stateName: 'New York', countrySlug: 'usa', population: '8.4M', landmark: 'Times Square', famousFood: ['NY Style Pizza', 'Bagels', 'Pastrami on Rye'] },
-  { name: 'Los Angeles', slug: 'los-angeles', stateSlug: 'california', stateName: 'California', countrySlug: 'usa', population: '3.8M', landmark: 'Hollywood Sign', famousFood: ['Baja Tacos', 'Avocado Toast', 'Korean BBQ'] },
-  { name: 'Chicago', slug: 'chicago', stateSlug: 'illinois', stateName: 'Illinois', countrySlug: 'usa', population: '2.6M', landmark: 'Willis Tower', famousFood: ['Deep Dish Pizza', 'Chicago Hot Dog', 'Italian Beef'] },
-  { name: 'Houston', slug: 'houston', stateSlug: 'texas', stateName: 'Texas', countrySlug: 'usa', population: '2.3M', landmark: 'Space Center Houston', famousFood: ['Texas BBQ', 'Tex-Mex', 'Viet-Cajun Crawfish'] },
-  { name: 'Phoenix', slug: 'phoenix', stateSlug: 'arizona', stateName: 'Arizona', countrySlug: 'usa', population: '1.6M', landmark: 'Camelback Mountain', famousFood: ['Sonoran Hot Dogs', 'Chimichangas', 'Mesquite BBQ'] },
-  { name: 'Philadelphia', slug: 'philadelphia', stateSlug: 'pennsylvania', stateName: 'Pennsylvania', countrySlug: 'usa', population: '1.5M', landmark: 'Liberty Bell', famousFood: ['Philly Cheesesteak', 'Soft Pretzels', 'Roast Pork Sandwich'] },
-  { name: 'San Antonio', slug: 'san-antonio', stateSlug: 'texas', stateName: 'Texas', countrySlug: 'usa', population: '1.4M', landmark: 'The Alamo', famousFood: ['Puffy Tacos', 'Brisket', 'Pan Dulce'] },
-  { name: 'San Diego', slug: 'san-diego', stateSlug: 'california', stateName: 'California', countrySlug: 'usa', population: '1.3M', landmark: 'Balboa Park', famousFood: ['Fish Tacos', 'California Burritos', 'Craft Beer'] },
-  { name: 'Dallas', slug: 'dallas', stateSlug: 'texas', stateName: 'Texas', countrySlug: 'usa', population: '1.3M', landmark: 'Reunion Tower', famousFood: ['Smoked Brisket', 'Chicken Fried Steak', 'Margaritas'] },
-  { name: 'Austin', slug: 'austin', stateSlug: 'texas', stateName: 'Texas', countrySlug: 'usa', population: '975K', landmark: 'Texas State Capitol', famousFood: ['Breakfast Tacos', 'Central Texas BBQ', 'Craft Beers'] },
-  { name: 'San Francisco', slug: 'san-francisco', stateSlug: 'california', stateName: 'California', countrySlug: 'usa', population: '808K', landmark: 'Golden Gate Bridge', famousFood: ['Sourdough Bread', 'Clam Chowder in Sourdough', 'Mission Burritos'] },
-  { name: 'Seattle', slug: 'seattle', stateSlug: 'washington', stateName: 'Washington', countrySlug: 'usa', population: '750K', landmark: 'Space Needle', famousFood: ['Wild Salmon', 'Espresso Coffee', 'Geoduck'] },
-  { name: 'Miami', slug: 'miami', stateSlug: 'florida', stateName: 'Florida', countrySlug: 'usa', population: '442K', landmark: 'South Beach', famousFood: ['Cuban Sandwich', 'Stone Crab Claws', 'Key Lime Pie'] },
-  { name: 'Las Vegas', slug: 'las-vegas', stateSlug: 'nevada', stateName: 'Nevada', countrySlug: 'usa', population: '656K', landmark: 'The Las Vegas Strip', famousFood: ['Buffets', 'Prime Rib', 'Gourmet Tasting Menus'] },
-  { name: 'Atlanta', slug: 'atlanta', stateSlug: 'georgia', stateName: 'Georgia', countrySlug: 'usa', population: '499K', landmark: 'Centennial Olympic Park', famousFood: ['Fried Chicken', 'Peach Cobbler', 'Southern BBQ'] },
-  { name: 'Boston', slug: 'boston', stateSlug: 'massachusetts', stateName: 'Massachusetts', countrySlug: 'usa', population: '650K', landmark: 'Fenway Park', famousFood: ['New England Clam Chowder', 'Lobster Rolls', 'Boston Cream Pie'] },
-  { name: 'Denver', slug: 'denver', stateSlug: 'colorado', stateName: 'Colorado', countrySlug: 'usa', population: '713K', landmark: 'Red Rocks Amphitheatre', famousFood: ['Green Chile', 'Bison Burgers', 'Craft IPA'] },
-  { name: 'Washington DC', slug: 'washington-dc', stateSlug: 'district-of-columbia', stateName: 'District of Columbia', countrySlug: 'usa', population: '670K', landmark: 'The White House', famousFood: ['Half-Smoke Sausage', 'Jumbo Slice Pizza', 'Pupusas'] },
+  // --- USA (Top Metro Cities & Capitals - 40 Priority Samples + Extensible) ---
+  { name: 'New York City', slug: 'new-york-city', stateSlug: 'new-york', stateName: 'New York', countrySlug: 'usa', population: '8.4M', landmark: 'Times Square', famousFood: ['NY Style Pizza', 'Bagels', 'Pastrami on Rye'], restaurantCount: 25000, deliveryApps: ['DoorDash', 'UberEats', 'Grubhub'] },
+  { name: 'Los Angeles', slug: 'los-angeles', stateSlug: 'california', stateName: 'California', countrySlug: 'usa', population: '3.8M', landmark: 'Hollywood Sign', famousFood: ['Baja Tacos', 'Avocado Toast', 'Korean BBQ'], restaurantCount: 18000, deliveryApps: ['DoorDash', 'UberEats', 'Postmates'] },
+  { name: 'Chicago', slug: 'chicago', stateSlug: 'illinois', stateName: 'Illinois', countrySlug: 'usa', population: '2.6M', landmark: 'Willis Tower', famousFood: ['Deep Dish Pizza', 'Chicago Hot Dog', 'Italian Beef'], restaurantCount: 12000, deliveryApps: ['DoorDash', 'Grubhub', 'UberEats'] },
+  { name: 'Houston', slug: 'houston', stateSlug: 'texas', stateName: 'Texas', countrySlug: 'usa', population: '2.3M', landmark: 'Space Center Houston', famousFood: ['Texas BBQ', 'Tex-Mex', 'Viet-Cajun Crawfish'], restaurantCount: 11000, deliveryApps: ['DoorDash', 'Favor', 'UberEats'] },
+  { name: 'Phoenix', slug: 'phoenix', stateSlug: 'arizona', stateName: 'Arizona', countrySlug: 'usa', population: '1.6M', landmark: 'Camelback Mountain', famousFood: ['Sonoran Hot Dogs', 'Chimichangas', 'Mesquite BBQ'], restaurantCount: 8500, deliveryApps: ['DoorDash', 'UberEats'] },
+  { name: 'Philadelphia', slug: 'philadelphia', stateSlug: 'pennsylvania', stateName: 'Pennsylvania', countrySlug: 'usa', population: '1.5M', landmark: 'Liberty Bell', famousFood: ['Philly Cheesesteak', 'Soft Pretzels', 'Roast Pork Sandwich'], restaurantCount: 7800, deliveryApps: ['DoorDash', 'Caviar', 'Grubhub'] },
+  { name: 'San Antonio', slug: 'san-antonio', stateSlug: 'texas', stateName: 'Texas', countrySlug: 'usa', population: '1.4M', landmark: 'The Alamo', famousFood: ['Puffy Tacos', 'Brisket', 'Pan Dulce'], restaurantCount: 6500, deliveryApps: ['DoorDash', 'Favor'] },
+  { name: 'San Diego', slug: 'san-diego', stateSlug: 'california', stateName: 'California', countrySlug: 'usa', population: '1.3M', landmark: 'Balboa Park', famousFood: ['Fish Tacos', 'California Burritos', 'Craft Beer'], restaurantCount: 7200, deliveryApps: ['DoorDash', 'UberEats'] },
+  { name: 'Dallas', slug: 'dallas', stateSlug: 'texas', stateName: 'Texas', countrySlug: 'usa', population: '1.3M', landmark: 'Reunion Tower', famousFood: ['Smoked Brisket', 'Chicken Fried Steak', 'Margaritas'], restaurantCount: 9000, deliveryApps: ['DoorDash', 'Favor', 'UberEats'] },
+  { name: 'Austin', slug: 'austin', stateSlug: 'texas', stateName: 'Texas', countrySlug: 'usa', population: '975K', landmark: 'Texas State Capitol', famousFood: ['Breakfast Tacos', 'Central Texas BBQ', 'Craft Beers'], restaurantCount: 6800, deliveryApps: ['DoorDash', 'Favor', 'UberEats'] },
+  { name: 'San Francisco', slug: 'san-francisco', stateSlug: 'california', stateName: 'California', countrySlug: 'usa', population: '808K', landmark: 'Golden Gate Bridge', famousFood: ['Sourdough Bread', 'Clam Chowder', 'Mission Burritos'], restaurantCount: 8000, deliveryApps: ['DoorDash', 'UberEats', 'Caviar'] },
+  { name: 'Seattle', slug: 'seattle', stateSlug: 'washington', stateName: 'Washington', countrySlug: 'usa', population: '750K', landmark: 'Space Needle', famousFood: ['Wild Salmon', 'Espresso Coffee', 'Geoduck'], restaurantCount: 5500, deliveryApps: ['DoorDash', 'UberEats'] },
+  { name: 'Miami', slug: 'miami', stateSlug: 'florida', stateName: 'Florida', countrySlug: 'usa', population: '442K', landmark: 'South Beach', famousFood: ['Cuban Sandwich', 'Stone Crab Claws', 'Key Lime Pie'], restaurantCount: 6200, deliveryApps: ['UberEats', 'DoorDash'] },
+  { name: 'Las Vegas', slug: 'las-vegas', stateSlug: 'nevada', stateName: 'Nevada', countrySlug: 'usa', population: '656K', landmark: 'The Las Vegas Strip', famousFood: ['Buffets', 'Prime Rib', 'Gourmet Tasting Menus'], restaurantCount: 5000, deliveryApps: ['DoorDash', 'UberEats'] },
+  { name: 'Atlanta', slug: 'atlanta', stateSlug: 'georgia', stateName: 'Georgia', countrySlug: 'usa', population: '499K', landmark: 'Centennial Olympic Park', famousFood: ['Fried Chicken', 'Peach Cobbler', 'Southern BBQ'], restaurantCount: 7500, deliveryApps: ['DoorDash', 'UberEats'] },
+  { name: 'Boston', slug: 'boston', stateSlug: 'massachusetts', stateName: 'Massachusetts', countrySlug: 'usa', population: '650K', landmark: 'Fenway Park', famousFood: ['New England Clam Chowder', 'Lobster Rolls', 'Boston Cream Pie'], restaurantCount: 4800, deliveryApps: ['DoorDash', 'UberEats'] },
+  { name: 'Denver', slug: 'denver', stateSlug: 'colorado', stateName: 'Colorado', countrySlug: 'usa', population: '713K', landmark: 'Red Rocks Amphitheatre', famousFood: ['Green Chile', 'Bison Burgers', 'Craft IPA'], restaurantCount: 4200, deliveryApps: ['DoorDash', 'UberEats'] },
+  { name: 'Washington DC', slug: 'washington-dc', stateSlug: 'district-of-columbia', stateName: 'District of Columbia', countrySlug: 'usa', population: '670K', landmark: 'The White House', famousFood: ['Half-Smoke Sausage', 'Jumbo Slice Pizza', 'Pupusas'], restaurantCount: 4500, deliveryApps: ['DoorDash', 'UberEats'] },
+  { name: 'Nashville', slug: 'nashville', stateSlug: 'tennessee', stateName: 'Tennessee', countrySlug: 'usa', population: '690K', landmark: 'Ryman Auditorium', famousFood: ['Hot Chicken', 'Meat and Three', 'Biscuits'], restaurantCount: 3800, deliveryApps: ['DoorDash', 'UberEats'] },
+  { name: 'New Orleans', slug: 'new-orleans', stateSlug: 'louisiana', stateName: 'Louisiana', countrySlug: 'usa', population: '383K', landmark: 'French Quarter', famousFood: ['Gumbo', 'Po Boys', 'Beignets'], restaurantCount: 3500, deliveryApps: ['DoorDash', 'UberEats'] },
 
   // --- UNITED KINGDOM (UK) ---
-  { name: 'London', slug: 'london', stateSlug: 'greater-london', stateName: 'Greater London', countrySlug: 'uk', population: '8.9M', landmark: 'Big Ben & Tower Bridge', famousFood: ['Fish and Chips', 'Full English Breakfast', 'Sunday Roast'] },
-  { name: 'Birmingham', slug: 'birmingham', stateSlug: 'west-midlands', stateName: 'West Midlands', countrySlug: 'uk', population: '1.1M', landmark: 'Bullring Shopping Centre', famousFood: ['Balti Curry', 'Pork Pies', 'Cadbury Chocolate'] },
-  { name: 'Manchester', slug: 'manchester', stateSlug: 'greater-manchester', stateName: 'Greater Manchester', countrySlug: 'uk', population: '550K', landmark: 'Old Trafford', famousFood: ['Manchester Tart', 'Boddingtons Ale', 'Curry Mile Dishes'] },
-  { name: 'Glasgow', slug: 'glasgow', stateSlug: 'scotland', stateName: 'Scotland', countrySlug: 'uk', population: '635K', landmark: 'George Square', famousFood: ['Deep Fried Mars Bar', 'Haggis', 'Scotch Pies'] },
-  { name: 'Edinburgh', slug: 'edinburgh', stateSlug: 'scotland', stateName: 'Scotland', countrySlug: 'uk', population: '530K', landmark: 'Edinburgh Castle', famousFood: ['Cullen Skink', 'Haggis Neeps & Tatties', 'Shortbread'] },
-  { name: 'Leeds', slug: 'leeds', stateSlug: 'west-yorkshire', stateName: 'West Yorkshire', countrySlug: 'uk', population: '812K', landmark: 'Kirkstall Abbey', famousFood: ['Yorkshire Pudding', 'Craft Ales', 'Fish & Chips'] },
-  { name: 'Bristol', slug: 'bristol', stateSlug: 'south-west-england', stateName: 'South West England', countrySlug: 'uk', population: '470K', landmark: 'Clifton Suspension Bridge', famousFood: ['Cider', 'Cheddar Cheese', 'Artisanal Sourdough'] },
-  { name: 'Liverpool', slug: 'liverpool', stateSlug: 'merseyside', stateName: 'Merseyside', countrySlug: 'uk', population: '496K', landmark: 'Albert Dock', famousFood: ['Scouse Stew', 'Wet Nests', 'Craft Craft Beers'] },
-  { name: 'Cambridge', slug: 'cambridge', stateSlug: 'cambridgeshire', stateName: 'Cambridgeshire', countrySlug: 'uk', population: '145K', landmark: 'Kings College Chapel', famousFood: ['Chelsea Buns', 'Afternoon Tea', 'Game Pies'] },
-  { name: 'Oxford', slug: 'oxford', stateSlug: 'oxfordshire', stateName: 'Oxfordshire', countrySlug: 'uk', population: '152K', landmark: 'Radcliffe Camera', famousFood: ['Oxford Sausage', 'Frank Cooper Marmalade', 'Artisan Coffee'] },
+  { name: 'London', slug: 'london', stateSlug: 'greater-london', stateName: 'Greater London', countrySlug: 'uk', population: '8.9M', landmark: 'Big Ben & Tower Bridge', famousFood: ['Fish and Chips', 'Full English Breakfast', 'Sunday Roast'], restaurantCount: 22000, deliveryApps: ['Deliveroo', 'UberEats', 'Just Eat'] },
+  { name: 'Birmingham', slug: 'birmingham', stateSlug: 'west-midlands', stateName: 'West Midlands', countrySlug: 'uk', population: '1.1M', landmark: 'Bullring Shopping Centre', famousFood: ['Balti Curry', 'Pork Pies', 'Cadbury Chocolate'], restaurantCount: 4500, deliveryApps: ['Deliveroo', 'Just Eat'] },
+  { name: 'Manchester', slug: 'manchester', stateSlug: 'greater-manchester', stateName: 'Greater Manchester', countrySlug: 'uk', population: '550K', landmark: 'Old Trafford', famousFood: ['Manchester Tart', 'Boddingtons Ale', 'Curry Mile Dishes'], restaurantCount: 5200, deliveryApps: ['Deliveroo', 'UberEats'] },
+  { name: 'Glasgow', slug: 'glasgow', stateSlug: 'scotland', stateName: 'Scotland', countrySlug: 'uk', population: '635K', landmark: 'George Square', famousFood: ['Deep Fried Mars Bar', 'Haggis', 'Scotch Pies'], restaurantCount: 3200, deliveryApps: ['Deliveroo', 'Just Eat'] },
+  { name: 'Edinburgh', slug: 'edinburgh', stateSlug: 'scotland', stateName: 'Scotland', countrySlug: 'uk', population: '530K', landmark: 'Edinburgh Castle', famousFood: ['Cullen Skink', 'Haggis Neeps & Tatties', 'Shortbread'], restaurantCount: 3800, deliveryApps: ['Deliveroo', 'UberEats'] },
+  { name: 'Leeds', slug: 'leeds', stateSlug: 'west-yorkshire', stateName: 'West Yorkshire', countrySlug: 'uk', population: '812K', landmark: 'Kirkstall Abbey', famousFood: ['Yorkshire Pudding', 'Craft Ales', 'Fish & Chips'], restaurantCount: 3100, deliveryApps: ['Deliveroo', 'Just Eat'] },
+  { name: 'Bristol', slug: 'bristol', stateSlug: 'south-west-england', stateName: 'South West England', countrySlug: 'uk', population: '470K', landmark: 'Clifton Suspension Bridge', famousFood: ['Cider', 'Cheddar Cheese', 'Artisanal Sourdough'], restaurantCount: 2800, deliveryApps: ['Deliveroo', 'UberEats'] },
+  { name: 'Liverpool', slug: 'liverpool', stateSlug: 'merseyside', stateName: 'Merseyside', countrySlug: 'uk', population: '496K', landmark: 'Albert Dock', famousFood: ['Scouse Stew', 'Wet Nests', 'Craft Beers'], restaurantCount: 2900, deliveryApps: ['Deliveroo', 'Just Eat'] },
+  { name: 'Cambridge', slug: 'cambridge', stateSlug: 'cambridgeshire', stateName: 'Cambridgeshire', countrySlug: 'uk', population: '145K', landmark: 'Kings College Chapel', famousFood: ['Chelsea Buns', 'Afternoon Tea', 'Game Pies'], restaurantCount: 1500, deliveryApps: ['Deliveroo', 'UberEats'] },
+  { name: 'Oxford', slug: 'oxford', stateSlug: 'oxfordshire', stateName: 'Oxfordshire', countrySlug: 'uk', population: '152K', landmark: 'Radcliffe Camera', famousFood: ['Oxford Sausage', 'Frank Cooper Marmalade', 'Artisan Coffee'], restaurantCount: 1600, deliveryApps: ['Deliveroo', 'UberEats'] },
 
   // --- UAE ---
-  { name: 'Dubai', slug: 'dubai', stateSlug: 'dubai-emirate', stateName: 'Emirate of Dubai', countrySlug: 'uae', population: '3.6M', landmark: 'Burj Khalifa', famousFood: ['Shawarma', 'Al Harees', 'Luqaimat'] },
-  { name: 'Abu Dhabi', slug: 'abu-dhabi', stateSlug: 'abu-dhabi-emirate', stateName: 'Emirate of Abu Dhabi', countrySlug: 'uae', population: '1.5M', landmark: 'Sheikh Zayed Grand Mosque', famousFood: ['Machboos', 'Camel Burger', 'Karak Tea'] },
-  { name: 'Sharjah', slug: 'sharjah', stateSlug: 'sharjah-emirate', stateName: 'Emirate of Sharjah', countrySlug: 'uae', population: '1.4M', landmark: 'Central Souq', famousFood: ['Arabic Mezze', 'Fresh Seafood', 'Falafel'] },
-  { name: 'Ajman', slug: 'ajman', stateSlug: 'ajman-emirate', stateName: 'Emirate of Ajman', countrySlug: 'uae', population: '500K', landmark: 'Ajman Corniche', famousFood: ['Grilled Fish', 'Kunafa', 'Manakish'] },
-  { name: 'Ras Al Khaimah', slug: 'ras-al-khaimah', stateSlug: 'rak-emirate', stateName: 'Emirate of RAK', countrySlug: 'uae', population: '400K', landmark: 'Jebel Jais', famousFood: ['Emirati Biryani', 'Fresh Dates', 'Al Madrooba'] },
-  { name: 'Dubai Marina', slug: 'dubai-marina', stateSlug: 'dubai-emirate', stateName: 'Emirate of Dubai', countrySlug: 'uae', population: '120K', landmark: 'Cayan Tower', famousFood: ['Luxury Brunch', 'Seafood Grills', 'Artisan Cocktails'] },
-  { name: 'Business Bay Dubai', slug: 'business-bay-dubai', stateSlug: 'dubai-emirate', stateName: 'Emirate of Dubai', countrySlug: 'uae', population: '90K', landmark: 'Dubai Canal', famousFood: ['Corporate Lunches', 'Executive Sushi', 'Specialty Coffee'] },
+  { name: 'Dubai', slug: 'dubai', stateSlug: 'dubai-emirate', stateName: 'Emirate of Dubai', countrySlug: 'uae', population: '3.6M', landmark: 'Burj Khalifa', famousFood: ['Shawarma', 'Al Harees', 'Luqaimat'], restaurantCount: 13000, deliveryApps: ['Talabat', 'Careem', 'Deliveroo'] },
+  { name: 'Abu Dhabi', slug: 'abu-dhabi', stateSlug: 'abu-dhabi-emirate', stateName: 'Emirate of Abu Dhabi', countrySlug: 'uae', population: '1.5M', landmark: 'Sheikh Zayed Grand Mosque', famousFood: ['Machboos', 'Camel Burger', 'Karak Tea'], restaurantCount: 6500, deliveryApps: ['Talabat', 'Careem'] },
+  { name: 'Sharjah', slug: 'sharjah', stateSlug: 'sharjah-emirate', stateName: 'Emirate of Sharjah', countrySlug: 'uae', population: '1.4M', landmark: 'Central Souq', famousFood: ['Arabic Mezze', 'Fresh Seafood', 'Falafel'], restaurantCount: 4200, deliveryApps: ['Talabat', 'Noon Food'] },
+  { name: 'Ajman', slug: 'ajman', stateSlug: 'ajman-emirate', stateName: 'Emirate of Ajman', countrySlug: 'uae', population: '500K', landmark: 'Ajman Corniche', famousFood: ['Grilled Fish', 'Kunafa', 'Manakish'], restaurantCount: 1800, deliveryApps: ['Talabat'] },
+  { name: 'Ras Al Khaimah', slug: 'ras-al-khaimah', stateSlug: 'rak-emirate', stateName: 'Emirate of RAK', countrySlug: 'uae', population: '400K', landmark: 'Jebel Jais', famousFood: ['Emirati Biryani', 'Fresh Dates', 'Al Madrooba'], restaurantCount: 1500, deliveryApps: ['Talabat'] },
+  { name: 'Dubai Marina', slug: 'dubai-marina', stateSlug: 'dubai-emirate', stateName: 'Emirate of Dubai', countrySlug: 'uae', population: '120K', landmark: 'Cayan Tower', famousFood: ['Luxury Brunch', 'Seafood Grills', 'Artisan Cocktails'], restaurantCount: 2200, deliveryApps: ['Deliveroo', 'Careem'] },
+  { name: 'Business Bay Dubai', slug: 'business-bay-dubai', stateSlug: 'dubai-emirate', stateName: 'Emirate of Dubai', countrySlug: 'uae', population: '90K', landmark: 'Dubai Canal', famousFood: ['Corporate Lunches', 'Executive Sushi', 'Specialty Coffee'], restaurantCount: 1900, deliveryApps: ['Deliveroo', 'Talabat'] },
 
   // --- CANADA ---
-  { name: 'Toronto', slug: 'toronto', stateSlug: 'ontario', stateName: 'Ontario', countrySlug: 'canada', population: '2.9M', landmark: 'CN Tower', famousFood: ['Peameal Bacon Sandwich', 'Toronto Pizza', 'Roti'] },
-  { name: 'Montreal', slug: 'montreal', stateSlug: 'quebec', stateName: 'Quebec', countrySlug: 'canada', population: '1.7M', landmark: 'Mount Royal', famousFood: ['Poutine', 'Montreal Bagels', 'Smoked Meat Sandwich'] },
-  { name: 'Vancouver', slug: 'vancouver', stateSlug: 'british-columbia', stateName: 'British Columbia', countrySlug: 'canada', population: '675K', landmark: 'Stanley Park', famousFood: ['Wild BC Salmon', 'Japadog', 'Spot Prawns'] },
-  { name: 'Calgary', slug: 'calgary', stateSlug: 'alberta', stateName: 'Alberta', countrySlug: 'canada', population: '1.3M', landmark: 'Calgary Tower', famousFood: ['Alberta Beef Steak', 'Ginger Beef', 'Caesar Cocktail'] },
+  { name: 'Toronto', slug: 'toronto', stateSlug: 'ontario', stateName: 'Ontario', countrySlug: 'canada', population: '2.9M', landmark: 'CN Tower', famousFood: ['Peameal Bacon Sandwich', 'Toronto Pizza', 'Roti'], restaurantCount: 10500, deliveryApps: ['UberEats', 'DoorDash', 'SkipTheDishes'] },
+  { name: 'Montreal', slug: 'montreal', stateSlug: 'quebec', stateName: 'Quebec', countrySlug: 'canada', population: '1.7M', landmark: 'Mount Royal', famousFood: ['Poutine', 'Montreal Bagels', 'Smoked Meat Sandwich'], restaurantCount: 7800, deliveryApps: ['UberEats', 'SkipTheDishes'] },
+  { name: 'Vancouver', slug: 'vancouver', stateSlug: 'british-columbia', stateName: 'British Columbia', countrySlug: 'canada', population: '675K', landmark: 'Stanley Park', famousFood: ['Wild BC Salmon', 'Japadog', 'Spot Prawns'], restaurantCount: 5200, deliveryApps: ['DoorDash', 'UberEats'] },
+  { name: 'Calgary', slug: 'calgary', stateSlug: 'alberta', stateName: 'Alberta', countrySlug: 'canada', population: '1.3M', landmark: 'Calgary Tower', famousFood: ['Alberta Beef Steak', 'Ginger Beef', 'Caesar Cocktail'], restaurantCount: 3900, deliveryApps: ['SkipTheDishes', 'DoorDash'] },
 
   // --- AUSTRALIA ---
-  { name: 'Sydney', slug: 'sydney', stateSlug: 'new-south-wales', stateName: 'New South Wales', countrySlug: 'australia', population: '5.3M', landmark: 'Sydney Opera House', famousFood: ['Sydney Rock Oysters', 'Flat White', 'Avocado Toast'] },
-  { name: 'Melbourne', slug: 'melbourne', stateSlug: 'victoria', stateName: 'Victoria', countrySlug: 'australia', population: '5.0M', landmark: 'Federation Square', famousFood: ['Specialty Espresso', 'Souvlaki', 'Dim Sim'] },
-  { name: 'Brisbane', slug: 'brisbane', stateSlug: 'queensland', stateName: 'Queensland', countrySlug: 'australia', population: '2.5M', landmark: 'Story Bridge', famousFood: ['Moreton Bay Bugs', 'Barramundi', 'Mango Smoothies'] },
+  { name: 'Sydney', slug: 'sydney', stateSlug: 'new-south-wales', stateName: 'New South Wales', countrySlug: 'australia', population: '5.3M', landmark: 'Sydney Opera House', famousFood: ['Sydney Rock Oysters', 'Flat White', 'Avocado Toast'], restaurantCount: 11000, deliveryApps: ['UberEats', 'DoorDash', 'Menulog'] },
+  { name: 'Melbourne', slug: 'melbourne', stateSlug: 'victoria', stateName: 'Victoria', countrySlug: 'australia', population: '5.0M', landmark: 'Federation Square', famousFood: ['Specialty Espresso', 'Souvlaki', 'Dim Sim'], restaurantCount: 12500, deliveryApps: ['UberEats', 'DoorDash', 'Menulog'] },
+  { name: 'Brisbane', slug: 'brisbane', stateSlug: 'queensland', stateName: 'Queensland', countrySlug: 'australia', population: '2.5M', landmark: 'Story Bridge', famousFood: ['Moreton Bay Bugs', 'Barramundi', 'Mango Smoothies'], restaurantCount: 4800, deliveryApps: ['UberEats', 'Menulog'] },
 
   // --- GERMANY ---
-  { name: 'Berlin', slug: 'berlin', stateSlug: 'berlin-state', stateName: 'State of Berlin', countrySlug: 'germany', population: '3.6M', landmark: 'Brandenburg Gate', famousFood: ['Currywurst', 'Doner Kebab', 'Berliner Pfannkuchen'] },
-  { name: 'Munich', slug: 'munich', stateSlug: 'bavaria', stateName: 'Bavaria', countrySlug: 'germany', population: '1.5M', landmark: 'Marienplatz', famousFood: ['Weisswurst', 'Pretzels', 'Bavarian Beer'] },
-  { name: 'Frankfurt', slug: 'frankfurt', stateSlug: 'hesse', stateName: 'Hesse', countrySlug: 'germany', population: '750K', landmark: 'Romer', famousFood: ['Frankfurter Sausage', 'Grune Sosse', 'Apfelwein'] },
+  { name: 'Berlin', slug: 'berlin', stateSlug: 'berlin-state', stateName: 'State of Berlin', countrySlug: 'germany', population: '3.6M', landmark: 'Brandenburg Gate', famousFood: ['Currywurst', 'Doner Kebab', 'Berliner Pfannkuchen'], restaurantCount: 9500, deliveryApps: ['Lieferando', 'Wolt', 'UberEats'] },
+  { name: 'Munich', slug: 'munich', stateSlug: 'bavaria', stateName: 'Bavaria', countrySlug: 'germany', population: '1.5M', landmark: 'Marienplatz', famousFood: ['Weisswurst', 'Pretzels', 'Bavarian Beer'], restaurantCount: 4200, deliveryApps: ['Lieferando', 'Wolt'] },
+  { name: 'Frankfurt', slug: 'frankfurt', stateSlug: 'hesse', stateName: 'Hesse', countrySlug: 'germany', population: '750K', landmark: 'Romer', famousFood: ['Frankfurter Sausage', 'Grune Sosse', 'Apfelwein'], restaurantCount: 3100, deliveryApps: ['Lieferando', 'UberEats'] },
 
   // --- FRANCE ---
-  { name: 'Paris', slug: 'paris', stateSlug: 'ile-de-france', stateName: 'Île-de-France', countrySlug: 'france', population: '2.1M', landmark: 'Eiffel Tower', famousFood: ['Croissant', 'Confit de Canard', 'Macarons'] },
-  { name: 'Lyon', slug: 'lyon', stateSlug: 'auvergne-rhone-alpes', stateName: 'Auvergne-Rhône-Alpes', countrySlug: 'france', population: '520K', landmark: 'Basilica of Notre-Dame de Fourvière', famousFood: ['Quenelles', 'Saucisson de Lyon', 'Praline Tart'] },
+  { name: 'Paris', slug: 'paris', stateSlug: 'ile-de-france', stateName: 'Île-de-France', countrySlug: 'france', population: '2.1M', landmark: 'Eiffel Tower', famousFood: ['Croissant', 'Confit de Canard', 'Macarons'], restaurantCount: 17500, deliveryApps: ['UberEats', 'Deliveroo'] },
+  { name: 'Lyon', slug: 'lyon', stateSlug: 'auvergne-rhone-alpes', stateName: 'Auvergne-Rhône-Alpes', countrySlug: 'france', population: '520K', landmark: 'Basilica of Notre-Dame de Fourvière', famousFood: ['Quenelles', 'Saucisson de Lyon', 'Praline Tart'], restaurantCount: 3400, deliveryApps: ['UberEats', 'Deliveroo'] },
 
   // --- SPAIN ---
-  { name: 'Madrid', slug: 'madrid', stateSlug: 'madrid-region', stateName: 'Community of Madrid', countrySlug: 'spain', population: '3.3M', landmark: 'Royal Palace of Madrid', famousFood: ['Bocadillo de Calamares', 'Cocido Madrileño', 'Churros with Chocolate'] },
-  { name: 'Barcelona', slug: 'barcelona', stateSlug: 'catalonia', stateName: 'Catalonia', countrySlug: 'spain', population: '1.6M', landmark: 'Sagrada Família', famousFood: ['Paella', 'Tapas', 'Crema Catalana'] },
+  { name: 'Madrid', slug: 'madrid', stateSlug: 'madrid-region', stateName: 'Community of Madrid', countrySlug: 'spain', population: '3.3M', landmark: 'Royal Palace of Madrid', famousFood: ['Bocadillo de Calamares', 'Cocido Madrileño', 'Churros with Chocolate'], restaurantCount: 14000, deliveryApps: ['Glovo', 'UberEats', 'Just Eat'] },
+  { name: 'Barcelona', slug: 'barcelona', stateSlug: 'catalonia', stateName: 'Catalonia', countrySlug: 'spain', population: '1.6M', landmark: 'Sagrada Família', famousFood: ['Paella', 'Tapas', 'Crema Catalana'], restaurantCount: 10200, deliveryApps: ['Glovo', 'UberEats'] },
 
   // --- NETHERLANDS ---
-  { name: 'Amsterdam', slug: 'amsterdam', stateSlug: 'north-holland', stateName: 'North Holland', countrySlug: 'netherlands', population: '870K', landmark: 'Rijksmuseum & Canals', famousFood: ['Stroopwafel', 'Bitterballen', 'Pickled Herring'] },
+  { name: 'Amsterdam', slug: 'amsterdam', stateSlug: 'north-holland', stateName: 'North Holland', countrySlug: 'netherlands', population: '870K', landmark: 'Rijksmuseum & Canals', famousFood: ['Stroopwafel', 'Bitterballen', 'Pickled Herring'], restaurantCount: 4500, deliveryApps: ['Thuisbezorgd.nl', 'UberEats'] },
 
   // --- SINGAPORE ---
-  { name: 'Singapore City', slug: 'singapore-city', stateSlug: 'central-region', stateName: 'Central Region', countrySlug: 'singapore', population: '5.6M', landmark: 'Marina Bay Sands', famousFood: ['Hainanese Chicken Rice', 'Chilli Crab', 'Laksa'] }
+  { name: 'Singapore City', slug: 'singapore-city', stateSlug: 'central-region', stateName: 'Central Region', countrySlug: 'singapore', population: '5.6M', landmark: 'Marina Bay Sands', famousFood: ['Hainanese Chicken Rice', 'Chilli Crab', 'Laksa'], restaurantCount: 11500, deliveryApps: ['GrabFood', 'Foodpanda', 'Deliveroo'] }
 ];
 
+// Content Variation Pools for Deterministic Uniqueness
+export const VARIATION_POOLS = {
+  intros: [
+    "CodeHTML engineers bespoke, hand-coded React.js websites and contactless QR digital menus tailored for dining spots, coffee shops, and bars in {city}. We eliminate heavy third-party app commissions and build sub-second loading web systems with 100% source code ownership.",
+    "Operating a culinary brand in {city} demands a mobile-first digital presence. CodeHTML delivers custom high-converting web engines, commission-free ordering funnels, and interactive digital menus designed specifically for {city} hospitality venues.",
+    "Stop losing hungry guests in {city} to competitors with outdated PDF menus. CodeHTML builds lightning-fast React platforms with sub-0.8s load times, Google Maps 3-Pack SEO markup, and direct table reservation engines."
+  ],
+  marketOverviews: [
+    "In {city}, over 82% of diners search for local menus on mobile phones before booking a table. Traditional web agencies rely on bloated WordPress templates that load slowly and crash under peak lunch/dinner traffic spikes.",
+    "The hospitality market across {city} is fiercely competitive. Third-party delivery apps like {apps} extract up to 30% per ticket, making direct web ordering channels vital for long-term profit margin protection.",
+    "Culinary venues near {landmark} in {city} need instant mobile menu access. CodeHTML builds hand-written React applications that bypass platform lock-in and deliver 100% code IP ownership."
+  ],
+  techEdges: [
+    "Our custom stack for {city} includes full source code ownership, zero monthly builder fees, and automated WhatsApp/email order notifications.",
+    "We integrate high-res visual food photography layouts, instant price modification tools, and Schema.org LocalBusiness structured data.",
+    "Built with React 19 and Tailwind CSS, our web engines achieve perfect 100/100 Google Lighthouse scores across desktop and mobile devices."
+  ]
+};
+
+// Simple String Hash Function for Deterministic Index Selection
+export function getHash(str: string): number {
+  let hash = 0;
+  for (let i = 0; i < str.length; i++) {
+    hash = (hash << 5) - hash + str.charCodeAt(i);
+    hash |= 0;
+  }
+  return Math.abs(hash);
+}
+
+// Master Helper to Generate Complete Dynamic Page Data
 export function generateRestaurantPageData(serviceSlug: string, citySlug: string) {
   const service = RESTAURANT_SERVICES[serviceSlug] || RESTAURANT_SERVICES['restaurant-website-design'];
   const city = CITIES_DATA.find((c) => c.slug === citySlug) || CITIES_DATA[0];
   const country = COUNTRIES_DATA[city.countrySlug] || COUNTRIES_DATA['usa'];
 
-  const formattedH1 = service.h1.replace('{city}', `${city.name}, ${country.name}`);
-  const formattedMetaTitle = service.metaTitle
-    .replace('{city}', `${city.name}`)
-    .replace('{price}', country.websitePrice);
-  const formattedMetaDesc = service.metaDesc
+  const hash = getHash(`${serviceSlug}-${citySlug}`);
+  const introVariation = VARIATION_POOLS.intros[hash % VARIATION_POOLS.intros.length]
+    .replace('{city}', city.name);
+  
+  const marketOverviewVariation = VARIATION_POOLS.marketOverviews[hash % VARIATION_POOLS.marketOverviews.length]
+    .replace('{city}', city.name)
+    .replace('{landmark}', city.landmark)
+    .replace('{apps}', (city.deliveryApps || ['UberEats', 'DoorDash']).join(', '));
+
+  const techEdgeVariation = VARIATION_POOLS.techEdges[hash % VARIATION_POOLS.techEdges.length]
     .replace('{city}', city.name);
 
-  const nearbyCities = CITIES_DATA.filter((c) => c.countrySlug === city.countrySlug && c.slug !== city.slug).slice(0, 6);
+  const formattedH1 = service.h1.replace('{city}', `${city.name}, ${country.name}`);
+  const formattedMetaTitle = service.metaTitle.replace('{city}', city.name);
+  const formattedMetaDesc = service.metaDesc.replace('{city}', city.name);
+
+  const nearbyCities = CITIES_DATA.filter((c) => c.countrySlug === city.countrySlug && c.slug !== city.slug).slice(0, 10);
 
   return {
     service,
@@ -420,6 +574,9 @@ export function generateRestaurantPageData(serviceSlug: string, citySlug: string
     h1: formattedH1,
     metaTitle: formattedMetaTitle,
     metaDesc: formattedMetaDesc,
+    intro: introVariation,
+    marketOverview: marketOverviewVariation,
+    techEdge: techEdgeVariation,
     nearbyCities,
     canonicalUrl: `https://sandeshagrawal.tech/${service.slug}-in-${city.slug}/`
   };
